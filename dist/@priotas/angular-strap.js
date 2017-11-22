@@ -1,8 +1,8 @@
 /**
- * angular-strap
- * @version v2.3.12 - 2017-11-20
- * @link http://mgcrea.github.io/angular-strap
- * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
+ * @priotas/angular-strap
+ * @version v2.4.0 - 2017-11-22
+ * @link https://priotas.github.io/angular-strap
+ * @author Priotas GmbH <oss@priotas.de> (https://priotas.github.io)
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 (function(window, document, undefined) {
@@ -493,7 +493,9 @@
         }
         $tooltip.toggle = function(evt) {
           if (evt) {
-            evt.preventDefault();
+            if (evt.preventDefault) {
+              evt.preventDefault();
+            }
           }
           if ($tooltip.$isShown) {
             $tooltip.leave();
@@ -2356,6 +2358,7 @@
           }
           bindBackdropEvents();
           bindKeyboardEvents();
+          $modal.focus();
         };
         function enterAnimateCallback() {
           scope.$emit(options.prefixEvent + '.show', $modal);
@@ -4373,7 +4376,7 @@
       setWidth: true
     };
     this.$get = [ '$window', 'debounce', 'dimensions', function($window, debounce, dimensions) {
-      var bodyEl = angular.element($window.document.body);
+      var documentEl = angular.element($window.document);
       var windowEl = angular.element($window);
       function AffixFactory(element, config) {
         var $affix = {};
@@ -4442,7 +4445,7 @@
             }
             if (options.inlineStyles) {
               element.css('position', options.offsetParent ? '' : 'relative');
-              element.css('top', options.offsetParent ? '' : bodyEl[0].offsetHeight - offsetBottom - elementHeight - initialOffsetTop + 'px');
+              element.css('top', options.offsetParent ? '' : documentEl.height() - offsetBottom - elementHeight - initialOffsetTop + 'px');
             }
           } else {
             unpin = null;

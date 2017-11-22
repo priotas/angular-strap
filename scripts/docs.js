@@ -1,19 +1,19 @@
 /**
- * angular-strap
- * @version v2.3.12 - 2017-11-20
- * @link http://mgcrea.github.io/angular-strap
- * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
+ * @priotas/angular-strap
+ * @version v2.4.0 - 2017-11-22
+ * @link https://priotas.github.io/angular-strap
+ * @author Priotas GmbH <oss@priotas.de> (https://priotas.github.io)
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 (function(window, document, undefined) {
   'use strict';
-  angular.module('mgcrea.ngStrapDocs', [ 'mgcrea.ngStrap', 'mgcrea.ngPlunkr', 'ngRoute', 'ngAnimate' ]).constant('version', 'v2.3.12').constant('ngVersion', angular.version.full).config([ '$plunkrProvider', 'version', function($plunkrProvider, version) {
+  angular.module('mgcrea.ngStrapDocs', [ 'mgcrea.ngStrap', 'mgcrea.ngPlunkr', 'ngRoute', 'ngAnimate' ]).constant('version', 'v2.4.0').constant('ngVersion', angular.version.full).config([ '$plunkrProvider', 'version', function($plunkrProvider, version) {
     angular.extend($plunkrProvider.defaults, {
       plunkrTitle: 'AngularStrap Example Plunkr',
       plunkrTags: [ 'angular', 'angular-strap' ],
       plunkrPrivate: false,
-      contentHtmlUrlPrefix: 'https://rawgit.com/mgcrea/angular-strap/' + version + '/src/',
-      contentJsUrlPrefix: 'https://rawgit.com/mgcrea/angular-strap/' + version + '/src/'
+      contentHtmlUrlPrefix: 'https://rawgit.com/priotas/angular-strap/' + version + '/src/',
+      contentJsUrlPrefix: 'https://rawgit.com/priotas/angular-strap/' + version + '/src/'
     });
   } ]).config([ '$routeProvider', '$compileProvider', '$locationProvider', '$sceProvider', function($routeProvider, $compileProvider, $locationProvider, $sceProvider) {
     $locationProvider.html5Mode(false);
