@@ -1,6 +1,6 @@
 /**
  * @priotas/angular-strap
- * @version v2.4.0 - 2017-11-22
+ * @version v2.4.1 - 2017-11-28
  * @link https://priotas.github.io/angular-strap
  * @author Priotas GmbH <oss@priotas.de> (https://priotas.github.io)
  * @license MIT License, http://www.opensource.org/licenses/MIT
