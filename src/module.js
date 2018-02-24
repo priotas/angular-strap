@@ -1,3 +1,4 @@
+import angular from 'angular';
 
 angular.module('mgcrea.ngStrap', [
   'mgcrea.ngStrap.modal',
@@ -13,7 +14,6 @@ angular.module('mgcrea.ngStrap', [
   'mgcrea.ngStrap.dropdown',
   'mgcrea.ngStrap.typeahead',
   'mgcrea.ngStrap.scrollspy',
-  'mgcrea.ngStrap.affix',
   'mgcrea.ngStrap.tab',
   'mgcrea.ngStrap.collapse'
 ]);

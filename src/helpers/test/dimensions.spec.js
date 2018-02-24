@@ -1,12 +1,14 @@
 'use strict';
 
+import dimensionsService from '../dimensions';
+
 describe('dimensions', function () {
 
   var $compile, scope, dimensions;
 
   var lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non velit nulla. Suspendisse sit amet tempus diam. Sed at ultricies neque. Suspendisse id felis a sem placerat ornare. Donec auctor, purus at molestie tempor, arcu enim molestie lacus, ac imperdiet massa urna eu massa. Praesent velit tellus, scelerisque a fermentum ut, ornare in diam. Phasellus egestas molestie feugiat. Vivamus sit amet viverra metus.';
 
-  beforeEach(module('mgcrea.ngStrap.helpers.dimensions'));
+  beforeEach(angular.mock.module(dimensionsService));
 
   beforeEach(inject(function (_$rootScope_, _$compile_, _dimensions_) {
     scope = _$rootScope_;
@@ -113,6 +115,8 @@ describe('dimensions', function () {
 
   });
 
+
+
   describe('fn.position', function () {
 
     it('should correctly match jQuery output for every template', function () {
@@ -123,23 +127,6 @@ describe('dimensions', function () {
         var jQueryPosition = element.position();
         expect(position.top).toBe(jQueryPosition.top);
         expect(position.left).toBe(jQueryPosition.left);
-      });
-    });
-
-  });
-
-  describe('fn.height, fn.width', function () {
-
-    it('should correctly match jQuery output for every template', function () {
-      angular.forEach(templates, function(template, name) {
-        var element = compileDirective(name);
-        if(!element.is('.btn')) element = element;
-        var height = dimensions.height(element[0]);
-        var jQueryHeight = element.height();
-        expect(height).toBe(jQueryHeight);
-        var width = dimensions.width(element[0]);
-        var jQueryWidth = element.width();
-        expect(width).toBe(jQueryWidth);
       });
     });
 
