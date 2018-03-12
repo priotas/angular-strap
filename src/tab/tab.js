@@ -10,7 +10,7 @@ angular
     var defaults = (this.defaults = {
       animation: 'am-fade',
       template: 'tab/tab.tpl.html',
-      navClass: 'nav-tabs',
+      navClass: 'nav nav-tabs',
       activeClass: 'active'
     });
     var _tabsHash = {};

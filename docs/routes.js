@@ -65,6 +65,12 @@ export default function($stateProvider) {
     component: 'selectDoc'
   };
 
+  const tabState = {
+    name: 'tabs',
+    url: '/tabs',
+    component: 'tabDoc'
+  };
+
   const tooltipState = {
     name: 'tooltips',
     url: '/tooltips',
@@ -82,5 +88,6 @@ export default function($stateProvider) {
   $stateProvider.state(popoverState);
   $stateProvider.state(scrollspyState);
   $stateProvider.state(selectState);
+  $stateProvider.state(tabState);
   $stateProvider.state(tooltipState);
 }

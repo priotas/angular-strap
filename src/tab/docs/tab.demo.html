@@ -1,8 +1,7 @@
-<div class="bs-docs-section" ng-controller="TabDemoCtrl">
+<div class="bs-docs-section">
 
   <div class="page-header">
-    <h1 id="tabs">Tabs <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/tab/tab.js" target="_blank">tab.js</a>
-    </h1>
+    <h1 id="tabs">Tabs</h1>
     <code>mgcrea.ngStrap.tab</code>
   </div>
 
@@ -13,13 +12,14 @@
   <pre class="bs-example-scope">$scope.tabs = {{tabs | json}};
 $scope.tabs.activeTab = "{{ tabs.activeTab }}";
   </pre>
+
   <div class="bs-example" append-source>
-    <div class="btn btn-default" ng-click="toggleThirdTab()">
+    <button class="btn btn-secondary" ng-click="toggleThirdTab()">
       {{ tabs[2].disabled ? 'Enable' : 'Disable' }} third tab
-    </div>
-    <div class="btn btn-default" ng-click="tabs.activeTab='Profile'">
+    </button>
+    <button class="btn btn-secondary" ng-click="tabs.activeTab='Profile'">
       Select "Profile" tab
-    </div>
+    </button>
     <hr />
     <!-- bsActivePane is optional -->
     <div bs-active-pane="tabs.activeTab" bs-tabs>
@@ -27,14 +27,15 @@ $scope.tabs.activeTab = "{{ tabs.activeTab }}";
       </div>
     </div>
   </div>
+
   <div class="bs-example" style="padding-bottom: 24px;" append-source>
     <!-- control a tab with bsActivePane binding -->
     <div class="btn-group" ng-model="tabs.activeTab" bs-radio-group>
-      <label class="btn btn-default" ng-repeat="tab in tabs">
-        <input type="radio" class="btn btn-default" value="{{ $index }}">Tab n°{{ $index + 1 }}
+      <label ng-repeat="tab in tabs">
+        <input type="radio" value="{{ $index }}">Tab n°{{ $index + 1 }}
       </label>
     </div>
-    <div class="btn btn-default" ng-click="pushTab()">Add new tab</div>
+    <div class="btn btn-secondary" ng-click="pushTab()">Add new tab</div>
   </div>
 
   <h2 id="tabs-usage">Usage</h2>

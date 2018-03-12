@@ -25,6 +25,7 @@ import navbarDoc from 'navbar/docs/navbar';
 import popoverDoc from 'popover/docs/popover';
 import scrollspyDoc from 'scrollspy/docs/scrollspy';
 import selectDoc from 'select/docs/select';
+import tabDoc from 'tab/docs/tab';
 import tooltipDoc from 'tooltip/docs/tooltip';
 
 import routes from './routes';
@@ -46,6 +47,7 @@ angular
     popoverDoc,
     scrollspyDoc,
     selectDoc,
+    tabDoc,
     tooltipDoc
   ])
   .config(function($sceProvider) {
