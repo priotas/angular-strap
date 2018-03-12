@@ -306,9 +306,9 @@ describe('datepicker', function() {
       angular.element(elm[0]).triggerHandler('focus');
       expect(sandboxEl.find('.dropdown-menu tbody td').length).toBe(7 * 6);
       expect(sandboxEl.find('.dropdown-menu tbody td .btn').length).toBe(7 * 6);
-      expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text()).toBe(dateFilter(today, 'MMMM yyyy'));
+      expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text().trim()).toBe(dateFilter(today, 'MMMM yyyy'));
       var todayDate = today.getDate();
-      var firstDate = sandboxEl.find('.dropdown-menu tbody .btn:eq(0)').text() * 1;
+      var firstDate = sandboxEl.find('.dropdown-menu tbody .btn:eq(0)').text().trim() * 1;
       expect(new Date(today.getFullYear(), today.getMonth() - (firstDate !== 1 ? 1 : 0), firstDate).getDay()).toBe(
         $datepicker.defaults.startWeek
       );
@@ -393,7 +393,7 @@ describe('datepicker', function() {
       for (var nextMonth = 1; nextMonth < 12; nextMonth++) {
         // should show next month view when selecting next month button
         angular.element(sandboxEl.find('.dropdown-menu thead button:eq(2)')[0]).triggerHandler('click');
-        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text()).toBe(
+        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text().trim()).toBe(
           dateFilter(new Date(2014, nextMonth, 1), 'MMMM yyyy')
         );
       }
@@ -409,7 +409,7 @@ describe('datepicker', function() {
       for (var previousMonth = 10; previousMonth > -1; previousMonth--) {
         // should show previous month view when selecting previous month button
         angular.element(sandboxEl.find('.dropdown-menu thead button:eq(0)')[0]).triggerHandler('click');
-        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text()).toBe(
+        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text().trim()).toBe(
           dateFilter(new Date(2014, previousMonth, 1), 'MMMM yyyy')
         );
       }
@@ -432,14 +432,14 @@ describe('datepicker', function() {
         angular.element(sandboxEl.find('.dropdown-menu thead button:eq(1)')[0]).triggerHandler('click');
         expect(sandboxEl.find('.dropdown-menu tbody td').length).toBe(4 * 3);
         expect(sandboxEl.find('.dropdown-menu tbody .btn').length).toBe(4 * 3);
-        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text()).toBe(dateFilter(today, 'yyyy'));
+        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text().trim()).toBe(dateFilter(today, 'yyyy'));
       });
 
       it('should correctly display active date', function() {
         var elm = compileDirective('default');
         angular.element(elm[0]).triggerHandler('focus');
         angular.element(sandboxEl.find('.dropdown-menu thead button:eq(1)')[0]).triggerHandler('click');
-        expect(sandboxEl.find('.dropdown-menu tbody td .btn-primary').text()).toBe(dateFilter(today, 'MMM'));
+        expect(sandboxEl.find('.dropdown-menu tbody td .btn-primary').text().trim()).toBe(dateFilter(today, 'MMM'));
       });
     });
 
@@ -470,7 +470,7 @@ describe('datepicker', function() {
         angular.element(elm[0]).triggerHandler('focus');
         angular.element(sandboxEl.find('.dropdown-menu thead button:eq(1)')[0]).triggerHandler('click');
         angular.element(sandboxEl.find('.dropdown-menu thead button:eq(1)')[0]).triggerHandler('click');
-        expect(sandboxEl.find('.dropdown-menu tbody td .btn-primary').text()).toBe(dateFilter(today, 'yyyy'));
+        expect(sandboxEl.find('.dropdown-menu tbody td .btn-primary').text().trim()).toBe(dateFilter(today, 'yyyy'));
       });
     });
 
@@ -615,7 +615,7 @@ describe('datepicker', function() {
 
         elm = compileDirective('default', { selectedDate: new Date(2012, monthToCheck, 1) });
         angular.element(elm[0]).triggerHandler('focus');
-        firstDay = sandboxEl.find('.dropdown-menu tbody .btn:eq(0)').text() * 1;
+        firstDay = sandboxEl.find('.dropdown-menu tbody .btn:eq(0)').text().trim() * 1;
         previousDay = firstDay - 1;
       });
 
@@ -627,7 +627,7 @@ describe('datepicker', function() {
         it('should correctly order month days in inner content', function() {
           // 6 rows (weeks) * 7 columns (days)
           for (var index = 0; index < 7 * 6; index++) {
-            var indexDay = sandboxEl.find('.dropdown-menu tbody td .btn:eq(' + index + ')').text() * 1;
+            var indexDay = sandboxEl.find('.dropdown-menu tbody td .btn:eq(' + index + ')').text().trim() * 1;
             expect(indexDay).toBeNextDayOrFirstDay(previousDay);
             previousDay = indexDay;
           }
@@ -937,7 +937,7 @@ describe('datepicker', function() {
         );
         var elm = compileDirective('options-template');
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-inner').text()).toBe('foo: "' + scope.selectedDate.toISOString() + '"');
+        expect(sandboxEl.find('.dropdown-inner').text().trim()).toBe('foo: "' + scope.selectedDate.toISOString() + '"');
       });
 
       it('should support template with ngRepeat', function() {
@@ -947,11 +947,11 @@ describe('datepicker', function() {
         );
         var elm = compileDirective('options-template');
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-inner').text()).toBe('123');
+        expect(sandboxEl.find('.dropdown-inner').text().trim()).toBe('123');
         // Consecutive toggles
         angular.element(elm[0]).triggerHandler('blur');
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-inner').text()).toBe('123');
+        expect(sandboxEl.find('.dropdown-inner').text().trim()).toBe('123');
       });
 
       it('should support template with ngClick', function() {
@@ -1208,15 +1208,15 @@ describe('datepicker', function() {
       it('should support a dynamic startWeek', function() {
         var elm = compileDirective('options-startWeek');
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-menu thead tr:eq(1) th:eq(0)').text()).toBe('Mon');
-        expect(sandboxEl.find('.dropdown-menu tbody button:eq(0)').text()).toBe('27');
+        expect(sandboxEl.find('.dropdown-menu thead tr:eq(1) th:eq(0)').text().trim()).toBe('Mon');
+        expect(sandboxEl.find('.dropdown-menu tbody button:eq(0)').text().trim()).toBe('27');
       });
 
       it('should support a negative gap induced by startWeek', function() {
         var elm = compileDirective('options-startWeek-bis');
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-menu thead tr:eq(1) th:eq(0)').text()).toBe('Sat');
-        expect(sandboxEl.find('.dropdown-menu tbody button:eq(0)').text()).toBe('28');
+        expect(sandboxEl.find('.dropdown-menu thead tr:eq(1) th:eq(0)').text().trim()).toBe('Sat');
+        expect(sandboxEl.find('.dropdown-menu tbody button:eq(0)').text().trim()).toBe('28');
       });
     });
 
@@ -1224,7 +1224,7 @@ describe('datepicker', function() {
       it('should support a dynamic startDate', function() {
         var elm = compileDirective('options-startDate');
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text()).toBe(
+        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text().trim()).toBe(
           dateFilter(new Date(scope.startDate), 'MMMM yyyy')
         );
       });
@@ -1232,7 +1232,7 @@ describe('datepicker', function() {
       it('should support a dynamic startDate from date object', function() {
         var elm = compileDirective('options-startDate', { startDate: new Date(2014, 2, 2) });
         angular.element(elm[0]).triggerHandler('focus');
-        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text()).toBe(
+        expect(sandboxEl.find('.dropdown-menu thead button:eq(1)').text().trim()).toBe(
           dateFilter(scope.startDate, 'MMMM yyyy')
         );
       });
