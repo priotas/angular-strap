@@ -47,6 +47,12 @@ export default function($stateProvider) {
     component: 'navbarDoc'
   };
 
+  const popoverState = {
+    name: 'popovers',
+    url: '/popovers',
+    component: 'popoverDoc'
+  };
+
   const tooltipState = {
     name: 'tooltips',
     url: '/tooltips',
@@ -61,5 +67,6 @@ export default function($stateProvider) {
   $stateProvider.state(dropdownState);
   $stateProvider.state(modalState);
   $stateProvider.state(navbarState);
+  $stateProvider.state(popoverState);
   $stateProvider.state(tooltipState);
 }

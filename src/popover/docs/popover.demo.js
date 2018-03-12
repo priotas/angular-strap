@@ -1,25 +1,22 @@
 'use strict';
 
-angular.module('mgcrea.ngStrapDocs')
+const controller = function($scope, $popover) {
+  'ngInject';
 
-.config(function($popoverProvider) {
-  angular.extend($popoverProvider.defaults, {
-    html: true
-  });
-})
+  this.$onInit = function() {
+    $scope.popover = { title: 'Title', content: 'Hello Popover<br />This is a multiline message!' };
 
-.controller('PopoverDemoCtrl', function($scope, $popover) {
+    var asAServiceOptions = {
+      title: $scope.popover.title,
+      content: $scope.popover.content,
+      trigger: 'manual'
+    };
 
-  $scope.popover = {title: 'Title', content: 'Hello Popover<br />This is a multiline message!'};
-
-  var asAServiceOptions = {
-    title: $scope.popover.title,
-    content: $scope.popover.content,
-    trigger: 'manual'
-  }
-
-  var myPopover = $popover(angular.element(document.querySelector('#popover-as-service')), asAServiceOptions);
-  $scope.togglePopover = function() {
-    myPopover.$promise.then(myPopover.toggle);
+    var myPopover = $popover(angular.element(document.querySelector('#popover-as-service')), asAServiceOptions);
+    $scope.togglePopover = function() {
+      myPopover.$promise.then(myPopover.toggle);
+    };
   };
-});
+};
+
+export default controller;

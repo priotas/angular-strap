@@ -343,7 +343,7 @@ angular
         }
 
         $tooltip.toggle = function(evt) {
-          if (evt) {
+          if (evt && evt.preventDefault) {
             evt.preventDefault();
           }
           if ($tooltip.$isShown) {
