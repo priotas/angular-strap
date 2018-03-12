@@ -1,8 +1,7 @@
-<div class="bs-docs-section" ng-controller="NavbarDemoCtrl">
+<div class="bs-docs-section">
 
   <div class="page-header">
-    <h1 id="navbars">Navbar <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/navbar/navbar.js" target="_blank">navbar.js</a>
-    </h1>
+    <h1 id="navbars">Navbar</h1>
     <code>mgcrea.ngStrap.navbar</code>
   </div>
 
@@ -13,14 +12,14 @@
   <h3>Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="navbar/docs/navbar.demo.html" data-content-js-url="navbar/docs/navbar.demo.js" ng-plunkr data-title="edit in plunker" data-placement="right" bs-tooltip></a></h3>
   <pre class="bs-example-scope">$location.path() = "{{$location.path()}}";</pre>
   <div class="bs-example" append-source>
-    <nav class="navbar navbar-default" role="navigation" bs-navbar>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" bs-navbar>
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Brand</a>
       </div>
       <ul class="nav navbar-nav">
-        <li data-match-route="/$"><a href="#/">Home</a></li>
-        <li data-match-route="/page-one"><a href="#/page-one">Page One</a></li>
-        <li data-match-route="/page-two.*"><a href="#/page-two/sub-a">Page Two</a></li>
+        <li class="nav-item" data-match-route="/$"><a href="#/" class="nav-link">Home</a></li>
+        <li class="nav-item" data-match-route="/page-one"><a href="#/page-one" class="nav-link">Page One</a></li>
+        <li class="nav-item" data-match-route="/page-two.*"><a href="#/page-two/sub-a" class="nav-link">Page Two</a></li>
       </ul>
     </nav>
   </div>

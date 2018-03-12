@@ -46,6 +46,7 @@ import collapseDoc from 'collapse/docs/collapse';
 import datepickerDoc from 'datepicker/docs/datepicker';
 import dropdownDoc from 'dropdown/docs/dropdown';
 import modalDoc from 'modal/docs/modal';
+import navbarDoc from 'navbar/docs/navbar';
 import tooltipDoc from 'tooltip/docs/tooltip';
 
 import routes from './routes';
@@ -63,6 +64,7 @@ angular
     datepickerDoc,
     dropdownDoc,
     modalDoc,
+    navbarDoc,
     tooltipDoc
   ])
   .config(function($sceProvider) {

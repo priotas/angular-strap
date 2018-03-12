@@ -41,6 +41,12 @@ export default function($stateProvider) {
     component: 'modalDoc'
   };
 
+  const navbarState = {
+    name: 'navbars',
+    url: '/navbars',
+    component: 'navbarDoc'
+  };
+
   const tooltipState = {
     name: 'tooltips',
     url: '/tooltips',
@@ -54,5 +60,6 @@ export default function($stateProvider) {
   $stateProvider.state(datepickerState);
   $stateProvider.state(dropdownState);
   $stateProvider.state(modalState);
+  $stateProvider.state(navbarState);
   $stateProvider.state(tooltipState);
 }

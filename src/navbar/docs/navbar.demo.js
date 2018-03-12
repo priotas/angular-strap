@@ -1,8 +1,8 @@
-'use strict';
+const controller = function($scope, $location) {
+  'ngInject';
+  this.$onInit = function() {
+    $scope.$location = $location;
+  };
+};
 
-angular.module('mgcrea.ngStrapDocs')
-
-.controller('NavbarDemoCtrl', function($scope, $location) {
-  $scope.$location = $location;
-
-});
+export default controller;
