@@ -29,6 +29,11 @@ export default function($stateProvider) {
     component: 'datepickerDoc'
   };
 
+  const dropdownState = {
+    name: 'dropdowns',
+    url: '/dropdowns',
+    component: 'dropdownDoc'
+  };
 
   const modalState = {
     name: 'modals',
@@ -47,6 +52,7 @@ export default function($stateProvider) {
   $stateProvider.state(buttonState);
   $stateProvider.state(collapseState);
   $stateProvider.state(datepickerState);
+  $stateProvider.state(dropdownState);
   $stateProvider.state(modalState);
   $stateProvider.state(tooltipState);
 }
