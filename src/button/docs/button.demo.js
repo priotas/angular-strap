@@ -1,11 +1,15 @@
 'use strict';
 
-angular.module('mgcrea.ngStrapDocs')
+const controller = function($scope) {
+  'ngInject';
 
-.controller('ButtonDemoCtrl', function($scope) {
-  $scope.button = {
-    toggle: false,
-    checkbox: {left: false, middle: true, right: false},
-    radio: 'left'
+  this.$onInit = function() {
+    $scope.button = {
+      toggle: false,
+      checkbox: { left: false, middle: true, right: false },
+      radio: 'left'
+    };
   };
-});
+};
+
+export default controller;

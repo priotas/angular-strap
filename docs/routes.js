@@ -6,9 +6,15 @@ export default function($stateProvider) {
   };
 
   const asideState = {
-    name: 'aside',
-    url: '/aside',
+    name: 'asides',
+    url: '/asides',
     component: 'asideDoc'
+  };
+
+  const buttonState = {
+    name: 'buttons',
+    url: '/buttons',
+    component: 'buttonDoc'
   };
 
   const modalState = {
@@ -25,6 +31,7 @@ export default function($stateProvider) {
 
   $stateProvider.state(alertState);
   $stateProvider.state(asideState);
+  $stateProvider.state(buttonState);
   $stateProvider.state(modalState);
   $stateProvider.state(tooltipState);
 }

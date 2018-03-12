@@ -20,6 +20,7 @@ import ngStrapTemplates from '../src/templates';
 // Docs
 import alertDoc from 'alert/docs/alert';
 import asideDoc from 'aside/docs/aside';
+import buttonDoc from 'button/docs/button';
 import modalDoc from 'modal/docs/modal';
 import tooltipDoc from 'tooltip/docs/tooltip';
 
@@ -33,6 +34,7 @@ angular
     angularAnimate,
     alertDoc,
     asideDoc,
+    buttonDoc,
     modalDoc,
     tooltipDoc
   ])
