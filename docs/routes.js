@@ -17,6 +17,12 @@ export default function($stateProvider) {
     component: 'buttonDoc'
   };
 
+  const collapseState = {
+    name: 'collapses',
+    url: '/collapses',
+    component: 'collapseDoc'
+  };
+
   const modalState = {
     name: 'modals',
     url: '/modals',
@@ -32,6 +38,7 @@ export default function($stateProvider) {
   $stateProvider.state(alertState);
   $stateProvider.state(asideState);
   $stateProvider.state(buttonState);
+  $stateProvider.state(collapseState);
   $stateProvider.state(modalState);
   $stateProvider.state(tooltipState);
 }

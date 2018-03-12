@@ -1,8 +1,7 @@
-<div class="bs-docs-section" ng-controller="CollapseDemoCtrl">
+<div class="bs-docs-section">
 
   <div class="page-header">
-    <h1 id="collapses">Collapses <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/collapse/collapse.js" target="_blank">collapse.js</a>
-    </h1>
+    <h1 id="collapses">Collapses</h1>
     <code>mgcrea.ngStrap.collapse</code>
   </div>
 
@@ -15,17 +14,17 @@ $scope.panels.activePanel = {{ panels.activePanel }};
   </pre>
   <div class="bs-example" append-source>
     <!-- ngModel is optional -->
-    <div class="panel-group" ng-model="panels.activePanel" role="tablist" aria-multiselectable="true" bs-collapse>
-      <div class="panel panel-default" ng-repeat="panel in panels">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
+    <div ng-model="panels.activePanel" role="tablist" aria-multiselectable="true" bs-collapse>
+      <div class="card" ng-repeat="panel in panels">
+        <div class="card-header" role="tab">
+          <h4 class="card-title">
             <a bs-collapse-toggle>
               {{ panel.title }}
             </a>
           </h4>
         </div>
-        <div class="panel-collapse" role="tabpanel" bs-collapse-target>
-          <div class="panel-body">
+        <div class="collapse" role="tabpanel" bs-collapse-target>
+          <div class="card-body">
             {{ panel.body }}
           </div>
         </div>
@@ -48,17 +47,17 @@ $scope.panels.activePanel = {{ panels.activePanel }};
   </pre>
   <div class="bs-example" append-source>
     <!-- ngModel is optional -->
-    <div class="panel-group" ng-model="multiplePanels.activePanels" data-allow-multiple="true" role="tablist" aria-multiselectable="true" bs-collapse>
-      <div class="panel panel-default" ng-repeat="panel in panels">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
+    <div ng-model="multiplePanels.activePanels" data-allow-multiple="true" role="tablist" aria-multiselectable="true" bs-collapse>
+      <div class="card" ng-repeat="panel in panels">
+        <div class="card-header" role="tab">
+          <h4 class="card-title">
             <a bs-collapse-toggle>
               {{ panel.title }}
             </a>
           </h4>
         </div>
-        <div class="panel-collapse" role="tabpanel" bs-collapse-target>
-          <div class="panel-body">
+        <div class="collapse" role="tabpanel" bs-collapse-target>
+          <div class="card-body">
             {{ panel.body }}
           </div>
         </div>

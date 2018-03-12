@@ -10,7 +10,7 @@ angular
     var defaults = (this.defaults = {
       animation: 'am-collapse',
       disallowToggle: false,
-      activeClass: 'in',
+      activeClass: 'show',
       startCollapsed: false,
       allowMultiple: false
     });

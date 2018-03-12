@@ -21,6 +21,7 @@ import ngStrapTemplates from '../src/templates';
 import alertDoc from 'alert/docs/alert';
 import asideDoc from 'aside/docs/aside';
 import buttonDoc from 'button/docs/button';
+import collapseDoc from 'collapse/docs/collapse';
 import modalDoc from 'modal/docs/modal';
 import tooltipDoc from 'tooltip/docs/tooltip';
 
@@ -35,6 +36,7 @@ angular
     alertDoc,
     asideDoc,
     buttonDoc,
+    collapseDoc,
     modalDoc,
     tooltipDoc
   ])
