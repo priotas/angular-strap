@@ -53,6 +53,18 @@ export default function($stateProvider) {
     component: 'popoverDoc'
   };
 
+  const scrollspyState = {
+    name: 'scrollspy',
+    url: '/scrollspy',
+    component: 'scrollspyDoc'
+  };
+
+  const selectState = {
+    name: 'selects',
+    url: '/selects',
+    component: 'selectDoc'
+  };
+
   const tooltipState = {
     name: 'tooltips',
     url: '/tooltips',
@@ -68,5 +80,7 @@ export default function($stateProvider) {
   $stateProvider.state(modalState);
   $stateProvider.state(navbarState);
   $stateProvider.state(popoverState);
+  $stateProvider.state(scrollspyState);
+  $stateProvider.state(selectState);
   $stateProvider.state(tooltipState);
 }
