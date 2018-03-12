@@ -43,8 +43,8 @@ angular
       daysOfWeekDisabled: '',
       hasToday: false,
       hasClear: false,
-      iconLeft: 'glyphicon glyphicon-chevron-left',
-      iconRight: 'glyphicon glyphicon-chevron-right'
+      iconLeft: 'fas fa-angle-left',
+      iconRight: 'fas fa-angle-right'
     });
 
     this.$get = function(

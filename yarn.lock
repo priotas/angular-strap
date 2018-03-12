@@ -16,6 +16,34 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@fortawesome/fontawesome-common-types@^0.1.3":
+  version "0.1.3"
+  resolved "https://npm.fontawesome.com/CAF33120-4AA2-4731-838F-EA2EE4775EEA/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.3.tgz#8475e0f2d1ad1f858c4ec2e76ed9a2456a09ad83"
+
+"@fortawesome/fontawesome-free-brands@^5.0.8":
+  version "5.0.8"
+  resolved "https://npm.fontawesome.com/CAF33120-4AA2-4731-838F-EA2EE4775EEA/@fortawesome/fontawesome-free-brands/-/fontawesome-free-brands-5.0.8.tgz#dd234982bd958b48ab1108570831d2b41bc8f73b"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/fontawesome-free-regular@^5.0.8":
+  version "5.0.8"
+  resolved "https://npm.fontawesome.com/CAF33120-4AA2-4731-838F-EA2EE4775EEA/@fortawesome/fontawesome-free-regular/-/fontawesome-free-regular-5.0.8.tgz#feaa96ee230e7f0d685ede3ae512aa6a1dca2480"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/fontawesome-free-solid@^5.0.8":
+  version "5.0.8"
+  resolved "https://npm.fontawesome.com/CAF33120-4AA2-4731-838F-EA2EE4775EEA/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.8.tgz#2890639d57dc16e2a90bb847c41770e38f72e432"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/fontawesome@^1.1.4":
+  version "1.1.4"
+  resolved "https://npm.fontawesome.com/CAF33120-4AA2-4731-838F-EA2EE4775EEA/@fortawesome/fontawesome/-/fontawesome-1.1.4.tgz#03065638046206c2226e103b550196934c75be9b"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
 "@uirouter/angularjs@^1.0.15":
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.15.tgz#06d7a350576301f8897f5132b37e69756872139e"

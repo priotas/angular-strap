@@ -1,0 +1,16 @@
+@import '~bootstrap/scss/bootstrap-reboot.scss';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~highlight.js/styles/github.css';
+@import '~angular-motion/dist/angular-motion.css';
+@import '~extras/bootstrap-additions/bootstrap-additions.scss';
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sidebar {
+  margin: 1rem;
+  flex: 1 1 25%;
+}
