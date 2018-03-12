@@ -27,6 +27,8 @@ import scrollspyDoc from 'scrollspy/docs/scrollspy';
 import selectDoc from 'select/docs/select';
 import tabDoc from 'tab/docs/tab';
 import tooltipDoc from 'tooltip/docs/tooltip';
+import timepickerDoc from 'timepicker/docs/timepicker';
+import typeaheadDoc from 'typeahead/docs/typeahead';
 
 import routes from './routes';
 
@@ -48,7 +50,9 @@ angular
     scrollspyDoc,
     selectDoc,
     tabDoc,
-    tooltipDoc
+    tooltipDoc,
+    timepickerDoc,
+    typeaheadDoc
   ])
   .config(function($sceProvider) {
     $sceProvider.enabled(false);

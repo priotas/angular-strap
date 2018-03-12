@@ -77,6 +77,19 @@ export default function($stateProvider) {
     component: 'tooltipDoc'
   };
 
+  const timepickerState = {
+    name: 'timepickers',
+    url: '/timepickers',
+    component: 'timepickerDoc'
+  };
+
+
+  const typeaheadState = {
+    name: 'typeaheads',
+    url: '/typeaheads',
+    component: 'typeaheadDoc'
+  };
+
   $stateProvider.state(alertState);
   $stateProvider.state(asideState);
   $stateProvider.state(buttonState);
@@ -90,4 +103,6 @@ export default function($stateProvider) {
   $stateProvider.state(selectState);
   $stateProvider.state(tabState);
   $stateProvider.state(tooltipState);
+  $stateProvider.state(timepickerState);
+  $stateProvider.state(typeaheadState);
 }

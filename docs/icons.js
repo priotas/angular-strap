@@ -10,9 +10,13 @@ import faDownload from '@fortawesome/fontawesome-free-solid/faDownload';
 import faGlobe from '@fortawesome/fontawesome-free-solid/faGlobe';
 import faExternalLink from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
 import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
+import faChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp';
+import faChevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown';
 import faHeart  from '@fortawesome/fontawesome-free-solid/faHeart';
 import faCogs  from '@fortawesome/fontawesome-free-solid/faCogs';
 import faCamera from '@fortawesome/fontawesome-free-solid/faCamera';
+import faClock from '@fortawesome/fontawesome-free-solid/faClock';
+import faHome from '@fortawesome/fontawesome-free-solid/faHome';
 
 fontawesome.library.add(
   faUser,
@@ -26,9 +30,13 @@ fontawesome.library.add(
   faGlobe,
   faExternalLink,
   faChevronRight,
+  faChevronUp,
+  faChevronDown,
   faHeart,
   faCogs,
-  faCamera
+  faCamera,
+  faClock,
+  faHome
 );
 
 export default this;

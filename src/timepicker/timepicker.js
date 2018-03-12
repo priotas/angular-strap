@@ -38,8 +38,8 @@ angular
       minuteStep: 5,
       secondStep: 5,
       roundDisplay: false,
-      iconUp: 'glyphicon glyphicon-chevron-up',
-      iconDown: 'glyphicon glyphicon-chevron-down',
+      iconUp: 'fas fa-chevron-up',
+      iconDown: 'fas fa-chevron-down',
       arrowBehavior: 'pager'
     });
 
