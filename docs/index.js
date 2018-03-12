@@ -19,6 +19,7 @@ import ngStrapTemplates from '../src/templates';
 
 // Docs
 import alertDoc from 'alert/docs/alert';
+import asideDoc from 'aside/docs/aside';
 import modalDoc from 'modal/docs/modal';
 import tooltipDoc from 'tooltip/docs/tooltip';
 
@@ -31,6 +32,7 @@ angular
     uiRouter,
     angularAnimate,
     alertDoc,
+    asideDoc,
     modalDoc,
     tooltipDoc
   ])

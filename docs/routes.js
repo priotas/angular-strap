@@ -1,23 +1,30 @@
 export default function($stateProvider) {
-  var alertState = {
+  const alertState = {
     name: 'alerts',
-    url: '/akerts',
+    url: '/alerts',
     component: 'alertDoc'
   };
 
-  var modalState = {
+  const asideState = {
+    name: 'aside',
+    url: '/aside',
+    component: 'asideDoc'
+  };
+
+  const modalState = {
     name: 'modals',
     url: '/modals',
     component: 'modalDoc'
   };
 
-  var tooltipState = {
+  const tooltipState = {
     name: 'tooltips',
     url: '/tooltips',
     component: 'tooltipDoc'
   };
 
   $stateProvider.state(alertState);
+  $stateProvider.state(asideState);
   $stateProvider.state(modalState);
   $stateProvider.state(tooltipState);
 }

@@ -1,14 +1,11 @@
 'use strict';
 
-angular.module('mgcrea.ngStrapDocs')
+const controller = function($scope) {
+  'ngInject';
 
-.config(function($asideProvider) {
-  angular.extend($asideProvider.defaults, {
-    container: 'body',
-    html: true
-  });
-})
+  this.$onInit = function() {
+    $scope.aside = { title: 'Title', content: 'Hello Aside<br />This is a multiline message!' };
+  };
+};
 
-.controller('AsideDemoCtrl', function($scope) {
-  $scope.aside = {title: 'Title', content: 'Hello Aside<br />This is a multiline message!'};
-});
+export default controller;
