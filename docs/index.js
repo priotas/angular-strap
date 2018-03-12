@@ -22,6 +22,7 @@ import alertDoc from 'alert/docs/alert';
 import asideDoc from 'aside/docs/aside';
 import buttonDoc from 'button/docs/button';
 import collapseDoc from 'collapse/docs/collapse';
+import datepickerDoc from 'datepicker/docs/datepicker';
 import modalDoc from 'modal/docs/modal';
 import tooltipDoc from 'tooltip/docs/tooltip';
 
@@ -37,6 +38,7 @@ angular
     asideDoc,
     buttonDoc,
     collapseDoc,
+    datepickerDoc,
     modalDoc,
     tooltipDoc
   ])
