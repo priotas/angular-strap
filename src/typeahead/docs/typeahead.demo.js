@@ -68,9 +68,14 @@ const controller = function($scope, $http) {
   $scope.selectedAddress = '';
   $scope.getAddress = function(viewValue) {
     var params = { address: viewValue, sensor: false };
-    return $http.get('http://maps.googleapis.com/maps/api/geocode/json', { params: params }).then(function(res) {
-      return res.data.results;
-    });
+    return $http
+      .get('http://maps.googleapis.com/maps/api/geocode/json', { params: params })
+      .then(function(res) {
+        return res.data.results;
+      })
+      .catch(err => {
+        return [];
+      });
   };
 };
 

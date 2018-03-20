@@ -1,6 +1,7 @@
 'use strict';
 
 const controller = function($scope, $alert) {
+  'ngInject';
   this.$onInit = function() {
     $scope.dropdown = [
       { text: '<i class="fas fa-download"></i>&nbsp;Another action', href: '#anotherAction', active: true },

@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -94,22 +94,21 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _core = __webpack_require__(5);
+var _core = __webpack_require__(17);
 
 var _core2 = _interopRequireDefault(_core);
 
-var _dimensions = __webpack_require__(3);
+var _dimensions = __webpack_require__(4);
 
 var _dimensions2 = _interopRequireDefault(_dimensions);
 
+var _tooltip = __webpack_require__(9);
+
+var _tooltip2 = _interopRequireDefault(_tooltip);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<div class="tooltip in" ng-show="title">\n  <div class="tooltip-arrow"></div>\n  <div class="tooltip-inner" ng-bind="title"></div>\n</div>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.tooltip';
-
-_angular2.default.module(MODULE_NAME, [_core2.default, _dimensions2.default]).provider('$tooltip', function () {
+_angular2.default.module(_tooltip2.default, [_core2.default, _dimensions2.default]).provider('$tooltip', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     customClass: '',
@@ -431,7 +430,7 @@ _angular2.default.module(MODULE_NAME, [_core2.default, _dimensions2.default]).pr
       }
 
       $tooltip.toggle = function (evt) {
-        if (evt) {
+        if (evt && evt.preventDefault) {
           evt.preventDefault();
         }
         if ($tooltip.$isShown) {
@@ -975,10 +974,24 @@ _angular2.default.module(MODULE_NAME, [_core2.default, _dimensions2.default]).pr
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _tooltip2.default;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap';
+
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -992,22 +1005,23 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _core = __webpack_require__(5);
+var _core = __webpack_require__(17);
 
 var _core2 = _interopRequireDefault(_core);
 
-var _dimensions = __webpack_require__(3);
+var _dimensions = __webpack_require__(4);
 
 var _dimensions2 = _interopRequireDefault(_dimensions);
 
-var _modal = __webpack_require__(11);
+var _modalTpl = __webpack_require__(5);
+
+var _modalTpl2 = _interopRequireDefault(_modalTpl);
+
+var _modal = __webpack_require__(6);
 
 var _modal2 = _interopRequireDefault(_modal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var template = '<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">\n<!--<span role="dialog" class="sr-only"></span>-->\n  <div class="modal-dialog">\n    <div class="modal-content">\n      <div class="modal-header" ng-show="title">\n        <h5 class="modal-title" ng-bind="title"></h5>\n        <button type="button" role="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>\n      </div>\n      <div class="modal-body" ng-bind="content"></div>\n      <div class="modal-footer">\n        <button type="button" class="btn btn-default" ng-click="$hide()" aria-label="Close">Close</button>\n      </div>\n    </div>\n  </div>\n</div>\n';
-
 
 _angular2.default.module(_modal2.default, [_core2.default, _dimensions2.default]).provider('$modal', function () {
   var defaults = this.defaults = {
@@ -1439,7 +1453,7 @@ _angular2.default.module(_modal2.default, [_core2.default, _dimensions2.default]
 exports.default = _modal2.default;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1626,7 +1640,27 @@ _angular2.default.module(MODULE_NAME, []).factory('dimensions', function () {
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 4 */
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=modal tabindex=-1 role=dialog aria-hidden=true> <div class=modal-dialog> <div class=modal-content> <div class=modal-header ng-show=title> <h5 class=modal-title ng-bind=title></h5> <button type=button role=button class=close aria-label=Close ng-click=$hide()><span aria-hidden=true>&times;</span></button> </div> <div class=modal-body ng-bind=content></div> <div class=modal-footer> <button type=button class=\"btn btn-default\" ng-click=$hide() aria-label=Close>Close</button> </div> </div> </div> </div> ";
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.modal';
+
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1640,7 +1674,126 @@ var MODULE_NAME = 'mgcrea.ngStrap.alert';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 5 */
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.aside';
+
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.tooltip';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.datepicker';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.dropdown';
+
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.popover';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.select';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.tab';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.timepicker';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.typeahead';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1840,7 +1993,7 @@ function bsCompilerService($q, $http, $injector, $compile, $controller, $templat
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 6 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2220,7 +2373,7 @@ _angular2.default.module(MODULE_NAME, []).provider('$dateParser', ['$localeProvi
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 7 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2301,7 +2454,7 @@ _angular2.default.module(MODULE_NAME, []).service('$dateFormatter', ['$locale', 
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 8 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2394,7 +2547,7 @@ _angular2.default.module(MODULE_NAME, []).provider('$parseOptions', function () 
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 9 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2403,57 +2556,64 @@ exports.default = MODULE_NAME;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.typeahead = exports.tooltip = exports.timepicker = exports.tab = exports.select = exports.scrollspy = exports.popover = exports.navbar = exports.modal = exports.datepicker = exports.collapse = exports.button = exports.aside = exports.alert = undefined;
 
-var _alert = __webpack_require__(10);
+var _angular = __webpack_require__(0);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _angularStrap = __webpack_require__(2);
+
+var _angularStrap2 = _interopRequireDefault(_angularStrap);
+
+var _alert = __webpack_require__(22);
 
 var _alert2 = _interopRequireDefault(_alert);
 
-var _aside = __webpack_require__(12);
+var _aside = __webpack_require__(23);
 
 var _aside2 = _interopRequireDefault(_aside);
 
-var _button = __webpack_require__(13);
+var _button = __webpack_require__(24);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _collapse = __webpack_require__(14);
+var _collapse = __webpack_require__(26);
 
 var _collapse2 = _interopRequireDefault(_collapse);
 
-var _datepicker = __webpack_require__(15);
+var _datepicker = __webpack_require__(28);
 
 var _datepicker2 = _interopRequireDefault(_datepicker);
 
-var _dropdown = __webpack_require__(16);
+var _dropdown = __webpack_require__(29);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _modal = __webpack_require__(2);
+var _modal = __webpack_require__(3);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _navbar = __webpack_require__(17);
+var _navbar = __webpack_require__(30);
 
 var _navbar2 = _interopRequireDefault(_navbar);
 
-var _popover = __webpack_require__(18);
+var _popover = __webpack_require__(32);
 
 var _popover2 = _interopRequireDefault(_popover);
 
-var _scrollspy = __webpack_require__(19);
+var _scrollspy = __webpack_require__(33);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
-var _select = __webpack_require__(21);
+var _select = __webpack_require__(36);
 
 var _select2 = _interopRequireDefault(_select);
 
-var _tab = __webpack_require__(22);
+var _tab = __webpack_require__(37);
 
 var _tab2 = _interopRequireDefault(_tab);
 
-var _timepicker = __webpack_require__(23);
+var _timepicker = __webpack_require__(38);
 
 var _timepicker2 = _interopRequireDefault(_timepicker);
 
@@ -2461,34 +2621,18 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _typeahead = __webpack_require__(24);
+var _typeahead = __webpack_require__(39);
 
 var _typeahead2 = _interopRequireDefault(_typeahead);
 
-var _module = __webpack_require__(25);
-
-var _module2 = _interopRequireDefault(_module);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.alert = _alert2.default;
-exports.aside = _aside2.default;
-exports.button = _button2.default;
-exports.collapse = _collapse2.default;
-exports.datepicker = _datepicker2.default;
-exports.modal = _modal2.default;
-exports.navbar = _navbar2.default;
-exports.popover = _popover2.default;
-exports.scrollspy = _scrollspy2.default;
-exports.select = _select2.default;
-exports.tab = _tab2.default;
-exports.timepicker = _timepicker2.default;
-exports.tooltip = _tooltip2.default;
-exports.typeahead = _typeahead2.default;
-exports.default = _module2.default;
+_angular2.default.module(_angularStrap2.default, [_alert2.default, _aside2.default, _button2.default, _collapse2.default, _datepicker2.default, _dropdown2.default, _modal2.default, _navbar2.default, _popover2.default, _scrollspy2.default, _select2.default, _tab2.default, _timepicker2.default, _tooltip2.default, _typeahead2.default]);
+
+exports.default = _angularStrap2.default;
 
 /***/ }),
-/* 10 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2503,11 +2647,11 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _modal = __webpack_require__(2);
+var _modal = __webpack_require__(3);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _alert = __webpack_require__(4);
+var _alert = __webpack_require__(7);
 
 var _alert2 = _interopRequireDefault(_alert);
 
@@ -2633,21 +2777,7 @@ exports.MODULE_NAME = _alert2.default;
 exports.default = _alert2.default;
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var MODULE_NAME = 'mgcrea.ngStrap.modal';
-
-exports.default = MODULE_NAME;
-
-/***/ }),
-/* 12 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2661,18 +2791,17 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _modal = __webpack_require__(2);
+var _modal = __webpack_require__(3);
 
 var _modal2 = _interopRequireDefault(_modal);
 
+var _aside = __webpack_require__(8);
+
+var _aside2 = _interopRequireDefault(_aside);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MODULE_NAME = 'mgcrea.ngStrap.aside';
-
-var template = '<div class="aside" tabindex="-1" role="dialog">\n  <div class="aside-dialog">\n    <div class="aside-content">\n      <div class="aside-header" ng-show="title">\n        <button type="button" class="close" ng-click="$hide()">&times;</button>\n        <h4 class="aside-title" ng-bind="title"></h4>\n      </div>\n      <div class="aside-body" ng-bind="content"></div>\n      <div class="aside-footer">\n        <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>\n      </div>\n    </div>\n  </div>\n</div>\n';
-
-
-_angular2.default.module(MODULE_NAME, [_modal2.default]).provider('$aside', function () {
+_angular2.default.module(_aside2.default, [_modal2.default]).provider('$aside', function () {
   var defaults = this.defaults = {
     animation: 'am-fade-and-slide-right',
     prefixClass: 'aside',
@@ -2763,10 +2892,10 @@ _angular2.default.module(MODULE_NAME, [_modal2.default]).provider('$aside', func
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _aside2.default;
 
 /***/ }),
-/* 13 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2780,11 +2909,13 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
+var _button = __webpack_require__(25);
+
+var _button2 = _interopRequireDefault(_button);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MODULE_NAME = 'mgcrea.ngStrap.button';
-
-_angular2.default.module(MODULE_NAME, []).provider('$button', function () {
+_angular2.default.module(_button2.default, []).provider('$button', function () {
   var defaults = this.defaults = {
     activeClass: 'active',
     toggleEvent: 'click'
@@ -2927,10 +3058,23 @@ _angular2.default.module(MODULE_NAME, []).provider('$button', function () {
   };
 }]);
 
+exports.default = _button2.default;
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.button';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 14 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2944,15 +3088,17 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
+var _collapse = __webpack_require__(27);
+
+var _collapse2 = _interopRequireDefault(_collapse);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MODULE_NAME = 'mgcrea.ngStrap.collapse';
-
-_angular2.default.module(MODULE_NAME, []).provider('$collapse', function () {
+_angular2.default.module(_collapse2.default, []).provider('$collapse', function () {
   var defaults = this.defaults = {
     animation: 'am-collapse',
     disallowToggle: false,
-    activeClass: 'in',
+    activeClass: 'show',
     startCollapsed: false,
     allowMultiple: false
   };
@@ -3203,10 +3349,23 @@ _angular2.default.module(MODULE_NAME, []).provider('$collapse', function () {
   };
 }]);
 
+exports.default = _collapse2.default;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.collapse';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 15 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3220,11 +3379,11 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _dateParser = __webpack_require__(6);
+var _dateParser = __webpack_require__(18);
 
 var _dateParser2 = _interopRequireDefault(_dateParser);
 
-var _dateFormatter = __webpack_require__(7);
+var _dateFormatter = __webpack_require__(19);
 
 var _dateFormatter2 = _interopRequireDefault(_dateFormatter);
 
@@ -3232,14 +3391,13 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
+var _datepicker = __webpack_require__(10);
+
+var _datepicker2 = _interopRequireDefault(_datepicker);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<div class="dropdown-menu datepicker" ng-class="\'datepicker-mode-\' + $mode" style="max-width: 320px;" aria-hidden="true">\n<table style="table-layout: fixed; height: 100%; width: 100%;">\n  <thead>\n    <tr class="text-center">\n      <th>\n        <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$selectPane(-1)">\n          <i class="{{$iconLeft}}"></i>\n        </button>\n      </th>\n      <th colspan="{{ rows[0].length - 2 }}">\n        <button tabindex="-1" type="button" class="btn btn-default btn-block text-strong"  ng-click="$toggleMode()">\n          <strong style="text-transform: capitalize;" ng-bind="title"></strong>\n        </button>\n      </th>\n      <th>\n        <button tabindex="-1" type="button" class="btn btn-default pull-right" ng-click="$selectPane(+1)">\n          <i class="{{$iconRight}}"></i>\n        </button>\n      </th>\n    </tr>\n    <tr ng-if="showLabels" ng-bind-html="labels"></tr>\n  </thead>\n  <tbody>\n    <tr ng-repeat="(i, row) in rows" height="{{ 100 / rows.length }}%">\n      <td class="text-center" ng-repeat="(j, el) in row">\n        <button tabindex="-1" type="button" class="btn btn-default" style="width: 100%" ng-class="{\'btn-primary\': el.selected, \'btn-info btn-today\': el.isToday && !el.selected}" ng-click="$select(el.date, el.disabled)" ng-disabled="el.disabled">\n          <span ng-class="{\'text-muted\': el.muted}" ng-bind="el.label"></span>\n        </button>\n      </td>\n    </tr>\n  </tbody>\n  <tfoot>\n    <tr>\n      <td colspan="{{ rows[0].length }}">\n        <div class="btn-group btn-group-justified" role="group">\n          <div class="btn-group" role="group" ng-if="$hasToday">\n            <button type="button" class="btn btn-default today " ng-click="$setToday()" ng-disabled="isTodayDisabled">\n              <strong style="text-transform: capitalize;">Today</strong>\n            </button>\n          </div>\n          <div class="btn-group" role="group" ng-if="$hasClear">\n            <button type="button" class="btn btn-default clear" ng-click="$clear()">\n              <strong style="text-transform: capitalize;">Clear</strong>\n            </button>\n          </div>\n        </div>\n      </td>\n    </tr>\n  </tfoot>\n</table>\n</div>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.datepicker';
-
-_angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.default, _tooltip2.default]).provider('$datepicker', function () {
+_angular2.default.module(_datepicker2.default, [_dateParser2.default, _dateFormatter2.default, _tooltip2.default]).provider('$datepicker', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     // Uncommenting the following line will break backwards compatability
@@ -3273,8 +3431,8 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
     daysOfWeekDisabled: '',
     hasToday: false,
     hasClear: false,
-    iconLeft: 'glyphicon glyphicon-chevron-left',
-    iconRight: 'glyphicon glyphicon-chevron-right'
+    iconLeft: 'fas fa-angle-left',
+    iconRight: 'fas fa-angle-right'
   };
 
   this.$get = ['$window', '$document', '$rootScope', '$sce', '$dateFormatter', 'datepickerViews', '$tooltip', '$timeout', function ($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
@@ -3367,7 +3525,11 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
             });
           }
         } else {
-          _angular2.default.extend(viewDate, { year: date.getFullYear(), month: date.getMonth(), date: date.getDate() });
+          _angular2.default.extend(viewDate, {
+            year: date.getFullYear(),
+            month: date.getMonth(),
+            date: date.getDate()
+          });
           $datepicker.setMode(scope.$mode - 1);
           $datepicker.$build();
         }
@@ -3560,7 +3722,11 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
         return $dateFormatter.formatDate(date, format, lang);
       };
 
-      var dateParser = $dateParser({ format: options.dateFormat, lang: lang, strict: options.strictFormat });
+      var dateParser = $dateParser({
+        format: options.dateFormat,
+        lang: lang,
+        strict: options.strictFormat
+      });
 
       // Visibility binding support
       if (attr.bsShow) {
@@ -3743,14 +3909,22 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
       var formatDate = function formatDate(date, format) {
         return $dateFormatter.formatDate(date, format, lang);
       };
-      var dateParser = $dateParser({ format: options.dateFormat, lang: lang, strict: options.strictFormat });
+      var dateParser = $dateParser({
+        format: options.dateFormat,
+        lang: lang,
+        strict: options.strictFormat
+      });
 
       var weekDaysMin = $dateFormatter.weekdaysShort(lang);
       var weekDaysLabels = weekDaysMin.slice(options.startWeek).concat(weekDaysMin.slice(0, options.startWeek));
       var weekDaysLabelsHtml = $sce.trustAsHtml('<th class="dow text-center">' + weekDaysLabels.join('</th><th class="dow text-center">') + '</th>');
 
       var startDate = picker.$date || (options.startDate ? dateParser.getDateForAttribute('startDate', options.startDate) : new Date());
-      var viewDate = { year: startDate.getFullYear(), month: startDate.getMonth(), date: startDate.getDate() };
+      var viewDate = {
+        year: startDate.getFullYear(),
+        month: startDate.getMonth(),
+        date: startDate.getDate()
+      };
 
       var views = [{
         format: options.dayFormat,
@@ -3850,7 +4024,10 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
             });
             picker.$build();
           } else if (date.getMonth() !== viewDate.month) {
-            _angular2.default.extend(viewDate, { month: picker.$date.getMonth(), date: picker.$date.getDate() });
+            _angular2.default.extend(viewDate, {
+              month: picker.$date.getMonth(),
+              date: picker.$date.getDate()
+            });
             picker.$updateSelected();
           }
         },
@@ -3958,10 +4135,10 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
   }];
 });
 
-exports.default = MODULE_NAME;
+exports.default = _datepicker2.default;
 
 /***/ }),
-/* 16 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3979,14 +4156,13 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
+var _dropdown = __webpack_require__(11);
+
+var _dropdown2 = _interopRequireDefault(_dropdown);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<ul tabindex="-1" class="dropdown-menu" role="menu" ng-show="content && content.length">\n  <li role="presentation" ng-class="{divider: item.divider, active: item.active}" ng-repeat="item in content">\n    <a role="menuitem" tabindex="-1" ng-href="{{item.href}}" ng-if="!item.divider && item.href" target="{{item.target || \'\'}}" ng-bind="item.text"></a>\n    <a role="menuitem" tabindex="-1" href="javascript:void(0)" ng-if="!item.divider && item.click" ng-click="$eval(item.click);$hide()" ng-bind="item.text"></a>\n  </li>\n</ul>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.dropdown';
-
-_angular2.default.module(MODULE_NAME, [_tooltip2.default]).provider('$dropdown', function () {
+_angular2.default.module(_dropdown2.default, [_tooltip2.default]).provider('$dropdown', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     prefixClass: 'dropdown',
@@ -4156,10 +4332,10 @@ _angular2.default.module(MODULE_NAME, [_tooltip2.default]).provider('$dropdown',
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _dropdown2.default;
 
 /***/ }),
-/* 17 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4173,11 +4349,13 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
+var _navbar = __webpack_require__(31);
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MODULE_NAME = 'mgcrea.ngStrap.navbar';
-
-_angular2.default.module(MODULE_NAME, []).provider('$navbar', function () {
+_angular2.default.module(_navbar2.default, []).provider('$navbar', function () {
   var defaults = this.defaults = {
     activeClass: 'active',
     routeAttr: 'data-match-route',
@@ -4224,10 +4402,23 @@ _angular2.default.module(MODULE_NAME, []).provider('$navbar', function () {
   };
 }]);
 
+exports.default = _navbar2.default;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.navbar';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 18 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4245,11 +4436,13 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
+var _popover = __webpack_require__(12);
+
+var _popover2 = _interopRequireDefault(_popover);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MODULE_NAME = 'mgcrea.ngStrap.popover';
-
-_angular2.default.module(MODULE_NAME, [_tooltip2.default]).provider('$popover', function () {
+_angular2.default.module(_popover2.default, [_tooltip2.default]).provider('$popover', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     customClass: '',
@@ -4402,10 +4595,10 @@ _angular2.default.module(MODULE_NAME, [_tooltip2.default]).provider('$popover', 
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _popover2.default;
 
 /***/ }),
-/* 19 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4419,19 +4612,21 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _debounce = __webpack_require__(20);
+var _debounce = __webpack_require__(34);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
-var _dimensions = __webpack_require__(3);
+var _dimensions = __webpack_require__(4);
 
 var _dimensions2 = _interopRequireDefault(_dimensions);
 
+var _scrollspy = __webpack_require__(35);
+
+var _scrollspy2 = _interopRequireDefault(_scrollspy);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MODULE_NAME = 'mgcrea.ngStrap.scrollspy';
-
-_angular2.default.module(MODULE_NAME, [_debounce2.default, _dimensions2.default]).provider('$scrollspy', function () {
+_angular2.default.module(_scrollspy2.default, [_debounce2.default, _dimensions2.default]).provider('$scrollspy', function () {
   // Pool of registered spies
   var spies = this.$$spies = {};
 
@@ -4658,10 +4853,10 @@ _angular2.default.module(MODULE_NAME, [_debounce2.default, _dimensions2.default]
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _scrollspy2.default;
 
 /***/ }),
-/* 20 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4734,7 +4929,20 @@ _angular2.default.module(MODULE_NAME, [])
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 21 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.scrollspy';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4752,18 +4960,17 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _parseOptions = __webpack_require__(8);
+var _parseOptions = __webpack_require__(20);
 
 var _parseOptions2 = _interopRequireDefault(_parseOptions);
 
+var _select = __webpack_require__(13);
+
+var _select2 = _interopRequireDefault(_select);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<ul tabindex="-1" class="select dropdown-menu" ng-show="$isVisible()" role="menu">\n  <li ng-if="$showAllNoneButtons">\n    <div class="btn-group" style="margin-bottom: 5px; margin-left: 5px">\n      <button type="button" class="btn btn-default btn-xs" ng-click="$selectAll()">{{$allText}}</button>\n      <button type="button" class="btn btn-default btn-xs" ng-click="$selectNone()">{{$noneText}}</button>\n    </div>\n  </li>\n  <li role="presentation" ng-repeat="match in $matches" ng-class="{active: $isActive($index)}">\n    <a style="cursor: default;" role="menuitem" tabindex="-1" ng-click="$select($index, $event)">\n      <i class="{{$iconCheckmark}} pull-right" ng-if="$isMultiple && $isActive($index)"></i>\n      <span ng-bind="match.label" role="menuitem"></span>\n    </a>\n  </li>\n</ul>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.select';
-
-_angular2.default.module(MODULE_NAME, [_tooltip2.default, _parseOptions2.default]).provider('$select', function () {
+_angular2.default.module(_select2.default, [_tooltip2.default, _parseOptions2.default]).provider('$select', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     prefixClass: 'select',
@@ -5161,10 +5368,10 @@ _angular2.default.module(MODULE_NAME, [_tooltip2.default, _parseOptions2.default
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _select2.default;
 
 /***/ }),
-/* 22 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5178,18 +5385,17 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
+var _tab = __webpack_require__(14);
+
+var _tab2 = _interopRequireDefault(_tab);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<ul class="nav" ng-class="$navClass" role="tablist">\n  <li role="presentation" ng-repeat="$pane in $panes track by $index" ng-class="[ $isActive($pane, $index) ? $activeClass : \'\', $pane.disabled ? \'disabled\' : \'\' ]">\n    <a role="tab" data-toggle="tab" ng-click="!$pane.disabled && $setActive($pane.name || $index)" data-index="{{ $index }}" ng-bind-html="$pane.title" aria-controls="$pane.title" ng-keypress="$onKeyPress($event, $pane.name || $index)" href=""></a>\n  </li>\n</ul>\n<div ng-transclude class="tab-content">\n</div>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.tab';
-
-_angular2.default.module(MODULE_NAME, []).provider('$tab', function () {
+_angular2.default.module(_tab2.default, []).provider('$tab', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     template: 'tab/tab.tpl.html',
-    navClass: 'nav-tabs',
+    navClass: 'nav nav-tabs',
     activeClass: 'active'
   };
   var _tabsHash = {};
@@ -5385,10 +5591,10 @@ _angular2.default.module(MODULE_NAME, []).provider('$tab', function () {
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _tab2.default;
 
 /***/ }),
-/* 23 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5402,11 +5608,11 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _dateParser = __webpack_require__(6);
+var _dateParser = __webpack_require__(18);
 
 var _dateParser2 = _interopRequireDefault(_dateParser);
 
-var _dateFormatter = __webpack_require__(7);
+var _dateFormatter = __webpack_require__(19);
 
 var _dateFormatter2 = _interopRequireDefault(_dateFormatter);
 
@@ -5414,14 +5620,13 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
+var _timepicker = __webpack_require__(15);
+
+var _timepicker2 = _interopRequireDefault(_timepicker);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<div class="dropdown-menu timepicker" style="min-width: 0px;width: auto;" aria-hidden="true">\n<table height="100%">\n  <thead>\n    <tr class="text-center">\n      <th>\n        <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$arrowAction(-1, 0)">\n          <i class="{{ $iconUp }}"></i>\n        </button>\n      </th>\n      <th>\n        &nbsp;\n      </th>\n      <th>\n        <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$arrowAction(-1, 1)">\n          <i class="{{ $iconUp }}"></i>\n        </button>\n      </th>\n      <th ng-if="showSeconds" >\n        &nbsp;\n      </th>\n      <th ng-if="showSeconds">\n        <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$arrowAction(-1, 2)">\n          <i class="{{ $iconUp }}"></i>\n        </button>\n      </th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr ng-repeat="(i, row) in rows">\n      <td class="text-center">\n        <button tabindex="-1" style="width: 100%" type="button" class="btn btn-default" ng-class="{\'btn-primary\': row[0].selected}" ng-click="$select(row[0].date, 0)" ng-disabled="row[0].disabled">\n          <span ng-class="{\'text-muted\': row[0].muted}" ng-bind="row[0].label"></span>\n        </button>\n      </td>\n      <td>\n        <span ng-bind="i == midIndex ? timeSeparator : \' \'"></span>\n      </td>\n      <td class="text-center">\n        <button tabindex="-1" ng-if="row[1].date" style="width: 100%" type="button" class="btn btn-default" ng-class="{\'btn-primary\': row[1].selected}" ng-click="$select(row[1].date, 1)" ng-disabled="row[1].disabled">\n          <span ng-class="{\'text-muted\': row[1].muted}" ng-bind="row[1].label"></span>\n        </button>\n      </td>\n      <td ng-if="showSeconds">\n        <span ng-bind="i == midIndex ? timeSeparator : \' \'"></span>\n      </td>\n      <td ng-if="showSeconds" class="text-center">\n        <button tabindex="-1" ng-if="row[2].date" style="width: 100%" type="button" class="btn btn-default" ng-class="{\'btn-primary\': row[2].selected}" ng-click="$select(row[2].date, 2)" ng-disabled="row[2].disabled">\n          <span ng-class="{\'text-muted\': row[2].muted}" ng-bind="row[2].label"></span>\n        </button>\n      </td>\n      <td ng-if="showAM">\n        &nbsp;\n      </td>\n      <td ng-if="showAM">\n        <button tabindex="-1" ng-show="i == midIndex - !isAM * 1" style="width: 100%" type="button" ng-class="{\'btn-primary\': !!isAM}" class="btn btn-default" ng-click="$switchMeridian()" ng-disabled="el.disabled">AM</button>\n        <button tabindex="-1" ng-show="i == midIndex + 1 - !isAM * 1" style="width: 100%" type="button" ng-class="{\'btn-primary\': !isAM}" class="btn btn-default" ng-click="$switchMeridian()" ng-disabled="el.disabled">PM</button>\n      </td>\n    </tr>\n  </tbody>\n  <tfoot>\n    <tr class="text-center">\n      <th>\n        <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$arrowAction(1, 0)">\n          <i class="{{ $iconDown }}"></i>\n        </button>\n      </th>\n      <th>\n        &nbsp;\n      </th>\n      <th>\n        <button tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$arrowAction(1, 1)">\n          <i class="{{ $iconDown }}"></i>\n        </button>\n      </th>\n      <th ng-if="showSeconds">\n        &nbsp;\n      </th>\n      <th ng-if="showSeconds">\n        <button ng-if="showSeconds" tabindex="-1" type="button" class="btn btn-default pull-left" ng-click="$arrowAction(1, 2)">\n          <i class="{{ $iconDown }}"></i>\n        </button>\n      </th>\n    </tr>\n  </tfoot>\n</table>\n</div>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.timepicker';
-
-_angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.default, _tooltip2.default]).provider('$timepicker', function () {
+_angular2.default.module(_timepicker2.default, [_dateParser2.default, _dateFormatter2.default, _tooltip2.default]).provider('$timepicker', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     defaultDate: 'auto',
@@ -5449,8 +5654,8 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
     minuteStep: 5,
     secondStep: 5,
     roundDisplay: false,
-    iconUp: 'glyphicon glyphicon-chevron-up',
-    iconDown: 'glyphicon glyphicon-chevron-down',
+    iconUp: 'fas fa-chevron-up',
+    iconDown: 'fas fa-chevron-down',
     arrowBehavior: 'pager'
   };
 
@@ -6002,10 +6207,10 @@ _angular2.default.module(MODULE_NAME, [_dateParser2.default, _dateFormatter2.def
   };
 }]);
 
-exports.default = MODULE_NAME;
+exports.default = _timepicker2.default;
 
 /***/ }),
-/* 24 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6025,18 +6230,17 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _parseOptions = __webpack_require__(8);
+var _parseOptions = __webpack_require__(20);
 
 var _parseOptions2 = _interopRequireDefault(_parseOptions);
 
+var _typeahead = __webpack_require__(16);
+
+var _typeahead2 = _interopRequireDefault(_typeahead);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<ul tabindex="-1" class="typeahead dropdown-menu" ng-show="$isVisible()" role="select" aria-hidden="true">\n  <li role="presentation" ng-repeat="match in $matches" ng-class="{active: $index == $activeIndex}">\n    <a role="menuitem" tabindex="-1" ng-click="$select($index, $event)" ng-bind="match.label"></a>\n  </li>\n</ul>\n';
-
-
-var MODULE_NAME = 'mgcrea.ngStrap.typeahead';
-
-_angular2.default.module(MODULE_NAME, [_tooltip2.default, _parseOptions2.default]).provider('$typeahead', function () {
+_angular2.default.module(_typeahead2.default, [_tooltip2.default, _parseOptions2.default]).provider('$typeahead', function () {
   var defaults = this.defaults = {
     animation: 'am-fade',
     prefixClass: 'typeahead',
@@ -6370,22 +6574,7 @@ _angular2.default.module(MODULE_NAME, [_tooltip2.default, _parseOptions2.default
   };
 }]);
 
-exports.default = MODULE_NAME;
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(0);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('mgcrea.ngStrap', ['mgcrea.ngStrap.modal', 'mgcrea.ngStrap.aside', 'mgcrea.ngStrap.alert', 'mgcrea.ngStrap.button', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'mgcrea.ngStrap.timepicker', 'mgcrea.ngStrap.navbar', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.scrollspy', 'mgcrea.ngStrap.tab', 'mgcrea.ngStrap.collapse']);
+exports.default = _typeahead2.default;
 
 /***/ })
 /******/ ]);

@@ -8,8 +8,8 @@ let outputFile = libraryName + '.js';
 const config = env => {
   return {
     entry: {
-      'angular-strap': './src/index.js',
-      'angular-strap.tpl': './src/templates.js'
+      'angular-strap': './src/angular-strap.js',
+      'angular-strap.tpl': './src/angular-strap.tpl.js'
     },
     output: {
       path: path.resolve(__dirname, 'release'),

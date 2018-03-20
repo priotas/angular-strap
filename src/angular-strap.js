@@ -1,3 +1,6 @@
+import angular from 'angular';
+import MODULE_NAME from './angular-strap.module';
+
 import alert from './alert/alert';
 import aside from './aside/aside';
 import button from './button/button';
@@ -14,14 +17,13 @@ import timepicker from './timepicker/timepicker';
 import tooltip from './tooltip/tooltip';
 import typeahead from './typeahead/typeahead';
 
-import modules from './module';
-
-export {
+angular.module(MODULE_NAME, [
   alert,
   aside,
   button,
   collapse,
   datepicker,
+  dropdown,
   modal,
   navbar,
   popover,
@@ -31,6 +33,7 @@ export {
   timepicker,
   tooltip,
   typeahead
-};
+]);
 
-export default modules;
+
+export default MODULE_NAME;

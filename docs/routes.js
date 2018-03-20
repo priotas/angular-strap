@@ -1,4 +1,6 @@
 export default function($stateProvider) {
+  'ngInject';
+  
   const alertState = {
     name: 'alerts',
     url: '/alerts',

@@ -12,8 +12,8 @@ import icons from './icons';
 
 // Docs
 import docCss from './styles.scss';
-import ngStrap from '../src/index';
-import ngStrapTemplates from '../src/templates';
+import angularStrap from '../src/angular-strap.js';
+import ngStrapTemplates from '../src/angular-strap.tpl';
 import alertDoc from 'alert/docs/alert';
 import asideDoc from 'aside/docs/aside';
 import buttonDoc from 'button/docs/button';
@@ -34,7 +34,7 @@ import routes from './routes';
 
 angular
   .module('docs', [
-    'mgcrea.ngStrap',
+    angularStrap,
     'hljs',
     uiRouter,
     angularAnimate,

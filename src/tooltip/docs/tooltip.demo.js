@@ -1,4 +1,5 @@
 export default function($scope, $tooltip) {
+  'ngInject';
   $scope.tooltip = { title: 'Hello Tooltip<br />This is a multiline message!', checked: false };
 
   // Controller usage example
