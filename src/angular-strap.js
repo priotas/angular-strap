@@ -4,6 +4,7 @@ import MODULE_NAME from './angular-strap.module';
 import alert from './alert/alert';
 import aside from './aside/aside';
 import button from './button/button';
+import carousel from './carousel/carousel';
 import collapse from './collapse/collapse';
 import datepicker from './datepicker/datepicker';
 import dropdown from './dropdown/dropdown';
@@ -21,6 +22,7 @@ angular.module(MODULE_NAME, [
   alert,
   aside,
   button,
+  carousel,
   collapse,
   datepicker,
   dropdown,
