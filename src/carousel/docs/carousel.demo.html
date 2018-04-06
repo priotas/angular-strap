@@ -1,0 +1,36 @@
+<h1 id="carousels"> Carousel</h1>
+
+<div class="row">
+  <div class="col">
+    <div style="height: 305px" class="d-flex">
+      <div bs-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+        <div bs-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+          <img ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>Slide {{slide.id}}</h4>
+            <p>{{slide.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+    <button type="button" class="btn btn-info" ng-click="randomize()">Randomize slides</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="noWrapSlides"> Disable Slide Looping
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    Interval, in milliseconds:
+    <input type="number" class="form-control" ng-model="myInterval">
+    <br />Enter a negative number or 0 to stop the interval.
+  </div>
+</div>

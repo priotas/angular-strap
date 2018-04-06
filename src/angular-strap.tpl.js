@@ -3,6 +3,7 @@ import MODULE_NAME from './angular-strap.module';
 
 import alert from './alert/alert.tpl';
 import aside from './aside/aside.tpl';
+import carousel from './carousel/carousel.tpl';
 import datepicker from './datepicker/datepicker.tpl';
 import dropdown from './dropdown/dropdown.tpl';
 import modal from './modal/modal.tpl';

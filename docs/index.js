@@ -17,6 +17,7 @@ import ngStrapTemplates from '../src/angular-strap.tpl';
 import alertDoc from 'alert/docs/alert';
 import asideDoc from 'aside/docs/aside';
 import buttonDoc from 'button/docs/button';
+import carouselDoc from 'carousel/docs/carousel';
 import collapseDoc from 'collapse/docs/collapse';
 import datepickerDoc from 'datepicker/docs/datepicker';
 import dropdownDoc from 'dropdown/docs/dropdown';
@@ -41,6 +42,7 @@ angular
     alertDoc,
     asideDoc,
     buttonDoc,
+    carouselDoc,
     collapseDoc,
     datepickerDoc,
     dropdownDoc,

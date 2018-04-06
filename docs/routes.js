@@ -19,6 +19,12 @@ export default function($stateProvider) {
     component: 'buttonDoc'
   };
 
+  const carouselState = {
+    name: 'carousels',
+    url: '/carousels',
+    component: 'carouselDoc'
+  };
+
   const collapseState = {
     name: 'collapses',
     url: '/collapses',
@@ -95,6 +101,7 @@ export default function($stateProvider) {
   $stateProvider.state(alertState);
   $stateProvider.state(asideState);
   $stateProvider.state(buttonState);
+  $stateProvider.state(carouselState);
   $stateProvider.state(collapseState);
   $stateProvider.state(datepickerState);
   $stateProvider.state(dropdownState);
