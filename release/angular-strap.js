@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -94,7 +94,7 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _core = __webpack_require__(17);
+var _core = __webpack_require__(18);
 
 var _core2 = _interopRequireDefault(_core);
 
@@ -102,7 +102,7 @@ var _dimensions = __webpack_require__(4);
 
 var _dimensions2 = _interopRequireDefault(_dimensions);
 
-var _tooltip = __webpack_require__(9);
+var _tooltip = __webpack_require__(10);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
@@ -1005,7 +1005,7 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _core = __webpack_require__(17);
+var _core = __webpack_require__(18);
 
 var _core2 = _interopRequireDefault(_core);
 
@@ -1697,7 +1697,8 @@ exports.default = MODULE_NAME;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var MODULE_NAME = 'mgcrea.ngStrap.tooltip';
+var MODULE_NAME = 'mgcrea.ngStrap.carousel';
+
 exports.default = MODULE_NAME;
 
 /***/ }),
@@ -1710,11 +1711,24 @@ exports.default = MODULE_NAME;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var MODULE_NAME = 'mgcrea.ngStrap.datepicker';
+var MODULE_NAME = 'mgcrea.ngStrap.tooltip';
 exports.default = MODULE_NAME;
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var MODULE_NAME = 'mgcrea.ngStrap.datepicker';
+exports.default = MODULE_NAME;
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1728,7 +1742,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.dropdown';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1741,7 +1755,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.popover';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1754,7 +1768,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.select';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1767,7 +1781,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.tab';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1780,7 +1794,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.timepicker';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1793,7 +1807,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.typeahead';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1993,7 +2007,7 @@ function bsCompilerService($q, $http, $injector, $compile, $controller, $templat
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2373,7 +2387,7 @@ _angular2.default.module(MODULE_NAME, []).provider('$dateParser', ['$localeProvi
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2454,7 +2468,7 @@ _angular2.default.module(MODULE_NAME, []).service('$dateFormatter', ['$locale', 
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2547,7 +2561,7 @@ _angular2.default.module(MODULE_NAME, []).provider('$parseOptions', function () 
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2565,27 +2579,31 @@ var _angularStrap = __webpack_require__(2);
 
 var _angularStrap2 = _interopRequireDefault(_angularStrap);
 
-var _alert = __webpack_require__(22);
+var _alert = __webpack_require__(23);
 
 var _alert2 = _interopRequireDefault(_alert);
 
-var _aside = __webpack_require__(23);
+var _aside = __webpack_require__(24);
 
 var _aside2 = _interopRequireDefault(_aside);
 
-var _button = __webpack_require__(24);
+var _button = __webpack_require__(25);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _collapse = __webpack_require__(26);
+var _carousel = __webpack_require__(27);
+
+var _carousel2 = _interopRequireDefault(_carousel);
+
+var _collapse = __webpack_require__(28);
 
 var _collapse2 = _interopRequireDefault(_collapse);
 
-var _datepicker = __webpack_require__(28);
+var _datepicker = __webpack_require__(30);
 
 var _datepicker2 = _interopRequireDefault(_datepicker);
 
-var _dropdown = __webpack_require__(29);
+var _dropdown = __webpack_require__(31);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
@@ -2593,27 +2611,27 @@ var _modal = __webpack_require__(3);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _navbar = __webpack_require__(30);
+var _navbar = __webpack_require__(32);
 
 var _navbar2 = _interopRequireDefault(_navbar);
 
-var _popover = __webpack_require__(32);
+var _popover = __webpack_require__(34);
 
 var _popover2 = _interopRequireDefault(_popover);
 
-var _scrollspy = __webpack_require__(33);
+var _scrollspy = __webpack_require__(35);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
-var _select = __webpack_require__(36);
+var _select = __webpack_require__(38);
 
 var _select2 = _interopRequireDefault(_select);
 
-var _tab = __webpack_require__(37);
+var _tab = __webpack_require__(39);
 
 var _tab2 = _interopRequireDefault(_tab);
 
-var _timepicker = __webpack_require__(38);
+var _timepicker = __webpack_require__(40);
 
 var _timepicker2 = _interopRequireDefault(_timepicker);
 
@@ -2621,18 +2639,18 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _typeahead = __webpack_require__(39);
+var _typeahead = __webpack_require__(41);
 
 var _typeahead2 = _interopRequireDefault(_typeahead);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_angular2.default.module(_angularStrap2.default, [_alert2.default, _aside2.default, _button2.default, _collapse2.default, _datepicker2.default, _dropdown2.default, _modal2.default, _navbar2.default, _popover2.default, _scrollspy2.default, _select2.default, _tab2.default, _timepicker2.default, _tooltip2.default, _typeahead2.default]);
+_angular2.default.module(_angularStrap2.default, [_alert2.default, _aside2.default, _button2.default, _carousel2.default, _collapse2.default, _datepicker2.default, _dropdown2.default, _modal2.default, _navbar2.default, _popover2.default, _scrollspy2.default, _select2.default, _tab2.default, _timepicker2.default, _tooltip2.default, _typeahead2.default]);
 
 exports.default = _angularStrap2.default;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2777,7 +2795,7 @@ exports.MODULE_NAME = _alert2.default;
 exports.default = _alert2.default;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2895,7 +2913,7 @@ _angular2.default.module(_aside2.default, [_modal2.default]).provider('$aside', 
 exports.default = _aside2.default;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2909,7 +2927,7 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _button = __webpack_require__(25);
+var _button = __webpack_require__(26);
 
 var _button2 = _interopRequireDefault(_button);
 
@@ -3061,7 +3079,7 @@ _angular2.default.module(_button2.default, []).provider('$button', function () {
 exports.default = _button2.default;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3074,7 +3092,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.button';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3088,7 +3106,373 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _collapse = __webpack_require__(27);
+var _carousel = __webpack_require__(9);
+
+var _carousel2 = _interopRequireDefault(_carousel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module(_carousel2.default, []).controller('UibCarouselController', ['$scope', '$element', '$interval', '$timeout', '$animate', function ($scope, $element, $interval, $timeout, $animate) {
+
+  var self = this,
+      slides = self.slides = $scope.slides = [],
+      SLIDE_DIRECTION = 'bs-slideDirection',
+      currentIndex = $scope.active,
+      currentInterval,
+      isPlaying;
+
+  var destroyed = false;
+  $element.addClass('carousel');
+
+  self.addSlide = function (slide, element) {
+    slides.push({
+      slide: slide,
+      element: element
+    });
+    slides.sort(function (a, b) {
+      return +a.slide.index - +b.slide.index;
+    });
+    //if this is the first slide or the slide is set to active, select it
+    if (slide.index === $scope.active || slides.length === 1 && !_angular2.default.isNumber($scope.active)) {
+      if ($scope.$currentTransition) {
+        $scope.$currentTransition = null;
+      }
+
+      currentIndex = slide.index;
+      $scope.active = slide.index;
+      setActive(currentIndex);
+      self.select(slides[findSlideIndex(slide)]);
+      if (slides.length === 1) {
+        $scope.play();
+      }
+    }
+  };
+
+  self.getCurrentIndex = function () {
+    for (var i = 0; i < slides.length; i++) {
+      if (slides[i].slide.index === currentIndex) {
+        return i;
+      }
+    }
+  };
+
+  self.next = $scope.next = function () {
+    var newIndex = (self.getCurrentIndex() + 1) % slides.length;
+
+    if (newIndex === 0 && $scope.noWrap()) {
+      $scope.pause();
+      return;
+    }
+
+    return self.select(slides[newIndex], 'next');
+  };
+
+  self.prev = $scope.prev = function () {
+    var newIndex = self.getCurrentIndex() - 1 < 0 ? slides.length - 1 : self.getCurrentIndex() - 1;
+
+    if ($scope.noWrap() && newIndex === slides.length - 1) {
+      $scope.pause();
+      return;
+    }
+
+    return self.select(slides[newIndex], 'prev');
+  };
+
+  self.removeSlide = function (slide) {
+    var index = findSlideIndex(slide);
+
+    //get the index of the slide inside the carousel
+    slides.splice(index, 1);
+    if (slides.length > 0 && currentIndex === index) {
+      if (index >= slides.length) {
+        currentIndex = slides.length - 1;
+        $scope.active = currentIndex;
+        setActive(currentIndex);
+        self.select(slides[slides.length - 1]);
+      } else {
+        currentIndex = index;
+        $scope.active = currentIndex;
+        setActive(currentIndex);
+        self.select(slides[index]);
+      }
+    } else if (currentIndex > index) {
+      currentIndex--;
+      $scope.active = currentIndex;
+    }
+
+    //clean the active value when no more slide
+    if (slides.length === 0) {
+      currentIndex = null;
+      $scope.active = null;
+    }
+  };
+
+  /* direction: "prev" or "next" */
+  self.select = $scope.select = function (nextSlide, direction) {
+    var nextIndex = findSlideIndex(nextSlide.slide);
+    //Decide direction if it's not given
+    if (direction === undefined) {
+      direction = nextIndex > self.getCurrentIndex() ? 'next' : 'prev';
+    }
+    //Prevent this user-triggered transition from occurring if there is already one in progress
+    if (nextSlide.slide.index !== currentIndex && !$scope.$currentTransition) {
+      goNext(nextSlide.slide, nextIndex, direction);
+    }
+  };
+
+  /* Allow outside people to call indexOf on slides array */
+  $scope.indexOfSlide = function (slide) {
+    return +slide.slide.index;
+  };
+
+  $scope.isActive = function (slide) {
+    return $scope.active === slide.slide.index;
+  };
+
+  $scope.isPrevDisabled = function () {
+    return $scope.active === 0 && $scope.noWrap();
+  };
+
+  $scope.isNextDisabled = function () {
+    return $scope.active === slides.length - 1 && $scope.noWrap();
+  };
+
+  $scope.pause = function () {
+    if (!$scope.noPause) {
+      isPlaying = false;
+      resetTimer();
+    }
+  };
+
+  $scope.play = function () {
+    if (!isPlaying) {
+      isPlaying = true;
+      restartTimer();
+    }
+  };
+
+  $element.on('mouseenter', $scope.pause);
+  $element.on('mouseleave', $scope.play);
+
+  $scope.$on('$destroy', function () {
+    destroyed = true;
+    resetTimer();
+  });
+
+  $scope.$watch('noTransition', function (noTransition) {
+    $animate.enabled($element, !noTransition);
+  });
+
+  $scope.$watch('interval', restartTimer);
+
+  $scope.$watchCollection('slides', resetTransition);
+
+  $scope.$watch('active', function (index) {
+    if (_angular2.default.isNumber(index) && currentIndex !== index) {
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].slide.index === index) {
+          index = i;
+          break;
+        }
+      }
+
+      var slide = slides[index];
+      if (slide) {
+        setActive(index);
+        self.select(slides[index]);
+        currentIndex = index;
+      }
+    }
+  });
+
+  function getSlideByIndex(index) {
+    for (var i = 0, l = slides.length; i < l; ++i) {
+      if (slides[i].index === index) {
+        return slides[i];
+      }
+    }
+  }
+
+  function setActive(index) {
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].slide.active = i === index;
+    }
+  }
+
+  function goNext(slide, index, direction) {
+    if (destroyed) {
+      return;
+    }
+
+    _angular2.default.extend(slide, { direction: direction });
+    _angular2.default.extend(slides[currentIndex].slide || {}, { direction: direction });
+    if ($animate.enabled($element) && !$scope.$currentTransition && slides[index].element && self.slides.length > 1) {
+      slides[index].element.data(SLIDE_DIRECTION, slide.direction);
+      var currentIdx = self.getCurrentIndex();
+
+      if (_angular2.default.isNumber(currentIdx) && slides[currentIdx].element) {
+        slides[currentIdx].element.data(SLIDE_DIRECTION, slide.direction);
+      }
+
+      $scope.$currentTransition = true;
+      $animate.on('addClass', slides[index].element, function (element, phase) {
+        if (phase === 'close') {
+          $scope.$currentTransition = null;
+          $animate.off('addClass', element);
+        }
+      });
+    }
+
+    $scope.active = slide.index;
+    currentIndex = slide.index;
+    setActive(index);
+
+    //every time you change slides, reset the timer
+    restartTimer();
+  }
+
+  function findSlideIndex(slide) {
+    for (var i = 0; i < slides.length; i++) {
+      if (slides[i].slide === slide) {
+        return i;
+      }
+    }
+  }
+
+  function resetTimer() {
+    if (currentInterval) {
+      $interval.cancel(currentInterval);
+      currentInterval = null;
+    }
+  }
+
+  function resetTransition(slides) {
+    if (!slides.length) {
+      $scope.$currentTransition = null;
+    }
+  }
+
+  function restartTimer() {
+    resetTimer();
+    var interval = +$scope.interval;
+    if (!isNaN(interval) && interval > 0) {
+      currentInterval = $interval(timerFn, interval);
+    }
+  }
+
+  function timerFn() {
+    var interval = +$scope.interval;
+    if (isPlaying && !isNaN(interval) && interval > 0 && slides.length) {
+      $scope.next();
+    } else {
+      $scope.pause();
+    }
+  }
+}]).directive('bsCarousel', function () {
+  return {
+    transclude: true,
+    controller: 'UibCarouselController',
+    controllerAs: 'carousel',
+    restrict: 'A',
+    templateUrl: function templateUrl(element, attrs) {
+      return attrs.templateUrl || 'carousel/carousel.tpl.html';
+    },
+    scope: {
+      active: '=',
+      interval: '=',
+      noTransition: '=',
+      noPause: '=',
+      noWrap: '&'
+    }
+  };
+}).directive('bsSlide', ['$animate', function ($animate) {
+  return {
+    require: '^bsCarousel',
+    restrict: 'A',
+    transclude: true,
+    templateUrl: function templateUrl(element, attrs) {
+      return attrs.templateUrl || 'carousel/slide.tpl.html';
+    },
+    scope: {
+      actual: '=?',
+      index: '=?'
+    },
+    link: function link(scope, element, attrs, carouselCtrl) {
+      element.addClass('carousel-item');
+      carouselCtrl.addSlide(scope, element);
+      //when the scope is destroyed then remove the slide from the current slides array
+      scope.$on('$destroy', function () {
+        carouselCtrl.removeSlide(scope);
+      });
+
+      scope.$watch('active', function (active) {
+        $animate[active ? 'addClass' : 'removeClass'](element, 'active');
+      });
+    }
+  };
+}]).animation('.item', ['$animateCss', function ($animateCss) {
+  var SLIDE_DIRECTION = 'bs-slideDirection';
+
+  function removeClass(element, className, callback) {
+    element.removeClass(className);
+    if (callback) {
+      callback();
+    }
+  }
+
+  return {
+    beforeAddClass: function beforeAddClass(element, className, done) {
+      if (className === 'active') {
+        var stopped = false;
+        var direction = element.data(SLIDE_DIRECTION);
+        var directionClass = direction === 'next' ? 'left' : 'right';
+        var removeClassFn = removeClass.bind(this, element, directionClass + ' ' + direction, done);
+        element.addClass(direction);
+
+        $animateCss(element, { addClass: directionClass }).start().done(removeClassFn);
+
+        return function () {
+          stopped = true;
+        };
+      }
+      done();
+    },
+    beforeRemoveClass: function beforeRemoveClass(element, className, done) {
+      if (className === 'active') {
+        var stopped = false;
+        var direction = element.data(SLIDE_DIRECTION);
+        var directionClass = direction === 'next' ? 'left' : 'right';
+        var removeClassFn = removeClass.bind(this, element, directionClass, done);
+
+        $animateCss(element, { addClass: directionClass }).start().done(removeClassFn);
+
+        return function () {
+          stopped = true;
+        };
+      }
+      done();
+    }
+  };
+}]);
+
+exports.default = _carousel2.default;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _angular = __webpack_require__(0);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+var _collapse = __webpack_require__(29);
 
 var _collapse2 = _interopRequireDefault(_collapse);
 
@@ -3352,7 +3736,7 @@ _angular2.default.module(_collapse2.default, []).provider('$collapse', function 
 exports.default = _collapse2.default;
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3365,7 +3749,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.collapse';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3379,11 +3763,11 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _dateParser = __webpack_require__(18);
+var _dateParser = __webpack_require__(19);
 
 var _dateParser2 = _interopRequireDefault(_dateParser);
 
-var _dateFormatter = __webpack_require__(19);
+var _dateFormatter = __webpack_require__(20);
 
 var _dateFormatter2 = _interopRequireDefault(_dateFormatter);
 
@@ -3391,7 +3775,7 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _datepicker = __webpack_require__(10);
+var _datepicker = __webpack_require__(11);
 
 var _datepicker2 = _interopRequireDefault(_datepicker);
 
@@ -4138,7 +4522,7 @@ _angular2.default.module(_datepicker2.default, [_dateParser2.default, _dateForma
 exports.default = _datepicker2.default;
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4156,7 +4540,7 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _dropdown = __webpack_require__(11);
+var _dropdown = __webpack_require__(12);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
@@ -4335,7 +4719,7 @@ _angular2.default.module(_dropdown2.default, [_tooltip2.default]).provider('$dro
 exports.default = _dropdown2.default;
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4349,7 +4733,7 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _navbar = __webpack_require__(31);
+var _navbar = __webpack_require__(33);
 
 var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -4405,7 +4789,7 @@ _angular2.default.module(_navbar2.default, []).provider('$navbar', function () {
 exports.default = _navbar2.default;
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4418,7 +4802,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.navbar';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4436,7 +4820,7 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _popover = __webpack_require__(12);
+var _popover = __webpack_require__(13);
 
 var _popover2 = _interopRequireDefault(_popover);
 
@@ -4598,7 +4982,7 @@ _angular2.default.module(_popover2.default, [_tooltip2.default]).provider('$popo
 exports.default = _popover2.default;
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4612,7 +4996,7 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _debounce = __webpack_require__(34);
+var _debounce = __webpack_require__(36);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -4620,7 +5004,7 @@ var _dimensions = __webpack_require__(4);
 
 var _dimensions2 = _interopRequireDefault(_dimensions);
 
-var _scrollspy = __webpack_require__(35);
+var _scrollspy = __webpack_require__(37);
 
 var _scrollspy2 = _interopRequireDefault(_scrollspy);
 
@@ -4856,7 +5240,7 @@ _angular2.default.module(_scrollspy2.default, [_debounce2.default, _dimensions2.
 exports.default = _scrollspy2.default;
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4929,7 +5313,7 @@ _angular2.default.module(MODULE_NAME, [])
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4942,7 +5326,7 @@ var MODULE_NAME = 'mgcrea.ngStrap.scrollspy';
 exports.default = MODULE_NAME;
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4960,11 +5344,11 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _parseOptions = __webpack_require__(20);
+var _parseOptions = __webpack_require__(21);
 
 var _parseOptions2 = _interopRequireDefault(_parseOptions);
 
-var _select = __webpack_require__(13);
+var _select = __webpack_require__(14);
 
 var _select2 = _interopRequireDefault(_select);
 
@@ -5371,7 +5755,7 @@ _angular2.default.module(_select2.default, [_tooltip2.default, _parseOptions2.de
 exports.default = _select2.default;
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5385,7 +5769,7 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _tab = __webpack_require__(14);
+var _tab = __webpack_require__(15);
 
 var _tab2 = _interopRequireDefault(_tab);
 
@@ -5594,7 +5978,7 @@ _angular2.default.module(_tab2.default, []).provider('$tab', function () {
 exports.default = _tab2.default;
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5608,11 +5992,11 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _dateParser = __webpack_require__(18);
+var _dateParser = __webpack_require__(19);
 
 var _dateParser2 = _interopRequireDefault(_dateParser);
 
-var _dateFormatter = __webpack_require__(19);
+var _dateFormatter = __webpack_require__(20);
 
 var _dateFormatter2 = _interopRequireDefault(_dateFormatter);
 
@@ -5620,7 +6004,7 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _timepicker = __webpack_require__(15);
+var _timepicker = __webpack_require__(16);
 
 var _timepicker2 = _interopRequireDefault(_timepicker);
 
@@ -6210,7 +6594,7 @@ _angular2.default.module(_timepicker2.default, [_dateParser2.default, _dateForma
 exports.default = _timepicker2.default;
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6230,11 +6614,11 @@ var _tooltip = __webpack_require__(1);
 
 var _tooltip2 = _interopRequireDefault(_tooltip);
 
-var _parseOptions = __webpack_require__(20);
+var _parseOptions = __webpack_require__(21);
 
 var _parseOptions2 = _interopRequireDefault(_parseOptions);
 
-var _typeahead = __webpack_require__(16);
+var _typeahead = __webpack_require__(17);
 
 var _typeahead2 = _interopRequireDefault(_typeahead);
 
