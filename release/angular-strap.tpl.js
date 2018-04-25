@@ -612,7 +612,7 @@ _angular2.default.module(_select2.default).run(['$templateCache', function ($tem
 /* 58 */
 /***/ (function(module, exports) {
 
-module.exports = "<ul tabindex=-1 class=\"select dropdown-menu\" ng-show=$isVisible() role=menu> <li ng-if=$showAllNoneButtons> <div class=btn-group style=margin-bottom:5px;margin-left:5px role=group> <button type=button class=\"btn btn-secondary btn-sm\" ng-click=$selectAll()>{{$allText}}</button> <button type=button class=\"btn btn-secondary btn-sm\" ng-click=$selectNone()>{{$noneText}}</button> </div> </li> <li role=presentation ng-repeat=\"match in $matches\" ng-class=\"{active: $isActive($index)}\"> <a class=dropdown-item style=cursor:default role=menuitem tabindex=-1 ng-click=\"$select($index, $event)\"> <i class=\"{{$iconCheckmark}} pull-right\" ng-if=\"$isMultiple && $isActive($index)\"></i> <span ng-bind=match.label role=menuitem></span> </a> </li> </ul> ";
+module.exports = "<ul tabindex=-1 class=\"select dropdown-menu\" ng-show=$isVisible() role=menu> <li ng-if=$showAllNoneButtons> <div class=btn-group style=margin-bottom:5px;margin-left:5px role=group> <button type=button class=\"btn btn-secondary btn-sm\" ng-click=$selectAll()>{{$allText}}</button> <button type=button class=\"btn btn-secondary btn-sm\" ng-click=$selectNone()>{{$noneText}}</button> </div> </li> <li role=presentation ng-repeat=\"match in $matches\"> <a ng-class=\"{active: $isActive($index)}\" class=dropdown-item style=cursor:default role=menuitem tabindex=-1 ng-click=\"$select($index, $event)\"> <i class=\"{{$iconCheckmark}} pull-right\" ng-if=\"$isMultiple && $isActive($index)\"></i> <span ng-bind=match.label role=menuitem></span> </a> </li> </ul> ";
 
 /***/ }),
 /* 59 */
