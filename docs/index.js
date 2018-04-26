@@ -22,8 +22,6 @@ import dropdownDoc from 'dropdown/docs/dropdown';
 import modalDoc from 'modal/docs/modal';
 import popoverDoc from 'popover/docs/popover';
 import selectDoc from 'select/docs/select';
-import tabDoc from 'tab/docs/tab';
-import tooltipDoc from 'tooltip/docs/tooltip';
 import timepickerDoc from 'timepicker/docs/timepicker';
 
 import routes from './routes';

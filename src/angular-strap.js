@@ -13,14 +13,12 @@ import tooltip from './tooltip/tooltip';
 
 angular.module(MODULE_NAME, [
   alert,
-  carousel,
   collapse,
   datepicker,
   dropdown,
   modal,
   popover,
   select,
-  tab,
   timepicker,
   tooltip
 ]);
