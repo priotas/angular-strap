@@ -77,11 +77,9 @@
     "docs": "webpack --env.production --config webpack.docs.js",
     "start": "webpack-dev-server --open --config webpack.docs.js",
     "build": "webpack --env.production --config webpack.build.js",
-    "test": "jest ./src/datepicker/test/*.spec.js --no-cache"
+    "test": "jest ./src/*/test/*.spec.js"
   },
   "jest": {
-    "verbose": false,
-    "bail": true,
     "testURL": "http://localhost",
     "moduleDirectories": [
       "node_modules",

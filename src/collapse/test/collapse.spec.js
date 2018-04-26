@@ -106,23 +106,23 @@ describe('collapse', function () {
 
     it('should navigate between panels on click', function() {
       var elm = compileDirective('default');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
       sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
-      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
       sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
     });
 
     it ('should not open or close panels that are disabled', function () {
       var elm = compileDirective('default-disabled-attr');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
       //the second toggle link is disabled 
       sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
-      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
       sandboxEl.find('[bs-collapse-toggle]:eq(0)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
     });
 
   });
@@ -131,12 +131,12 @@ describe('collapse', function () {
 
     it('should navigate between panels on click', function() {
       var elm = compileDirective('jade-attributes');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
       sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
-      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
       sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
     });
 
   });
@@ -145,10 +145,10 @@ describe('collapse', function () {
 
     it('should navigate between panels on click', function() {
       var elm = compileDirective('template-ngRepeat');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
       sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
-      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
+      expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
     });
 
     it('should reset collapse toogles/targets when ngRepeat source changes', function() {
@@ -215,7 +215,7 @@ describe('collapse', function () {
 
       it('should support custom activeClass', function() {
         var elm = compileDirective('options-activeClass');
-        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
+        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
         expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('active')).toBeTruthy();
         sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
         expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('active')).toBeFalsy();
@@ -230,18 +230,18 @@ describe('collapse', function () {
         var elm = compileDirective('options-disallowToggle-true');
         var $heading = sandboxEl.find('a[bs-collapse-toggle]:eq(0)');
         var $target = sandboxEl.find('[bs-collapse-target]:eq(0)');
-        expect($target.hasClass('in')).toBeTruthy();
+        expect($target.hasClass('show')).toBeTruthy();
         $heading.triggerHandler('click');
-        expect($target.hasClass('in')).toBeTruthy();
+        expect($target.hasClass('show')).toBeTruthy();
       });
 
       it('should NOT support disallowToggle flag if false', function() {
         var elm = compileDirective('options-disallowToggle-false');
         var $heading = sandboxEl.find('a[bs-collapse-toggle]:eq(0)');
         var $target = sandboxEl.find('[bs-collapse-target]:eq(0)');
-        expect($target.hasClass('in')).toBeTruthy();
+        expect($target.hasClass('show')).toBeTruthy();
         $heading.triggerHandler('click');
-        expect($target.hasClass('in')).toBeFalsy();
+        expect($target.hasClass('show')).toBeFalsy();
       });
 
     });
@@ -250,20 +250,20 @@ describe('collapse', function () {
 
       it('should support startCollapsed flag when true', function() {
         var elm = compileDirective('options-startCollapsed-true');
-        expect(sandboxEl.find('[bs-collapse-target]').hasClass('in')).toBeFalsy();
+        expect(sandboxEl.find('[bs-collapse-target]').hasClass('show')).toBeFalsy();
         sandboxEl.find('[bs-collapse-toggle]:eq(0)').triggerHandler('click');
-        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
+        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
         sandboxEl.find('[bs-collapse-toggle]:eq(0)').triggerHandler('click');
-        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
+        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
       });
 
       it('should NOT support startCollapsed flag when false', function() {
         var elm = compileDirective('options-startCollapsed-false');
-        expect(sandboxEl.find('[bs-collapse-target]').hasClass('in')).toBeTruthy();
+        expect(sandboxEl.find('[bs-collapse-target]').hasClass('show')).toBeTruthy();
         sandboxEl.find('[bs-collapse-toggle]:eq(0)').triggerHandler('click');
-        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
+        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
         sandboxEl.find('[bs-collapse-toggle]:eq(0)').triggerHandler('click');
-        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
+        expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
       });
 
     });
@@ -274,23 +274,23 @@ describe('collapse', function () {
 
         it('should open each panel on click when allowMultiple is true', function() {
           var elm = compileDirective('default-multiple-true');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
           sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
           sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
         });
 
         it('should open each panel on click when allowMultiple is false', function() {
           var elm = compileDirective('default-multiple-false');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
           sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
         });
 
       });
@@ -300,22 +300,22 @@ describe('collapse', function () {
         it('should correctly apply initial model values', function() {
           var elm = compileDirective('binding-ngModel-multiple', { panel: { active: [1,2] } });
           expect(scope.panel.active).toEqual([1,2]);
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(2)').hasClass('in')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(2)').hasClass('show')).toBeTruthy();
         });
 
         it('should correctly apply model changes to the view', function() {
           var elm = compileDirective('binding-ngModel-multiple');
           expect(scope.panel.active).toEqual([1]);
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(2)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(2)').hasClass('show')).toBeFalsy();
           scope.panel.active = [0,2];
           scope.$digest();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(2)').hasClass('in')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeTruthy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(2)').hasClass('show')).toBeTruthy();
         });
 
         it('should correctly apply view changes to the model', function() {
@@ -333,12 +333,12 @@ describe('collapse', function () {
 
         it('should support custom activeClass', function() {
           var elm = compileDirective('options-activeClass-multiple');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
           expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('active')).toBeTruthy();
           sandboxEl.find('[bs-collapse-toggle]:eq(1)').triggerHandler('click');
-          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('show')).toBeFalsy();
           expect(sandboxEl.find('[bs-collapse-target]:eq(0)').hasClass('active')).toBeTruthy();
-          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('in')).toBeFalsy();
+          expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('show')).toBeFalsy();
           expect(sandboxEl.find('[bs-collapse-target]:eq(1)').hasClass('active')).toBeTruthy();
         });
 
