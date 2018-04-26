@@ -162,22 +162,22 @@ describe('popover', function() {
     it('should correctly compile inner content', function() {
       var elm = compileDirective('default');
       angular.element(elm[0]).triggerHandler('click');
-      expect(sandboxEl.find('.popover-title').html()).toBe(scope.popover.title);
-      expect(sandboxEl.find('.popover-content').html()).toBe(scope.popover.content);
+      expect(sandboxEl.find('.popover-header').html()).toBe(scope.popover.title);
+      expect(sandboxEl.find('.popover-body').html()).toBe(scope.popover.content);
     });
 
     it('should support scope as object', function() {
       var elm = compileDirective('markup-scope');
       angular.element(elm[0]).triggerHandler('click');
-      expect(sandboxEl.find('.popover-title').html()).toBe(scope.popover.title);
-      expect(sandboxEl.find('.popover-content').html()).toBe(scope.popover.content);
+      expect(sandboxEl.find('.popover-header').html()).toBe(scope.popover.title);
+      expect(sandboxEl.find('.popover-body').html()).toBe(scope.popover.content);
     });
 
     it('should support ngRepeat markup', function() {
       var elm = compileDirective('markup-ngRepeat');
       angular.element(elm.find('[bs-popover]')).triggerHandler('click');
-      expect(sandboxEl.find('.popover-title').html()).toBe(scope.items[0].popover.title);
-      expect(sandboxEl.find('.popover-content').html()).toBe(scope.items[0].popover.content);
+      expect(sandboxEl.find('.popover-header').html()).toBe(scope.items[0].popover.title);
+      expect(sandboxEl.find('.popover-body').html()).toBe(scope.items[0].popover.content);
     });
   });
 
@@ -412,22 +412,22 @@ describe('popover', function() {
       it('should NOT correctly compile inner content by default', function() {
         var elm = compileDirective('default', { popover: { title: 'title<br>next', content: 'content<br>next' } });
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-title').html()).not.toBe(scope.popover.title);
-        expect(sandboxEl.find('.popover-content').html()).not.toBe(scope.popover.content);
+        expect(sandboxEl.find('.popover-header').html()).not.toBe(scope.popover.title);
+        expect(sandboxEl.find('.popover-body').html()).not.toBe(scope.popover.content);
       });
 
       it('should correctly compile inner content when truthy', function() {
         var elm = compileDirective('options-html', { html: 'true' });
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-title').html()).toBe(scope.popover.title);
-        expect(sandboxEl.find('.popover-content').html()).toBe(scope.popover.content);
+        expect(sandboxEl.find('.popover-header').html()).toBe(scope.popover.title);
+        expect(sandboxEl.find('.popover-body').html()).toBe(scope.popover.content);
       });
 
       it('should NOT correctly compile inner content when falsy', function() {
         var elm = compileDirective('options-html', { html: 'false' });
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-title').html()).not.toBe(scope.popover.title);
-        expect(sandboxEl.find('.popover-content').html()).not.toBe(scope.popover.content);
+        expect(sandboxEl.find('.popover-header').html()).not.toBe(scope.popover.title);
+        expect(sandboxEl.find('.popover-body').html()).not.toBe(scope.popover.content);
       });
     });
 
@@ -475,7 +475,7 @@ describe('popover', function() {
         $templateCache.put('custom', '<div class="popover"><div class="popover-content">foo: {{content}}</div></div>');
         var elm = compileDirective('options-template');
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-content').text()).toBe('foo: ' + scope.popover.content);
+        expect(sandboxEl.find('.popover-body').text()).toBe('foo: ' + scope.popover.content);
       });
 
       it('should support template with ngRepeat', function() {
@@ -485,11 +485,11 @@ describe('popover', function() {
         );
         var elm = compileDirective('options-template');
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-content').text()).toBe('foobarbaz');
+        expect(sandboxEl.find('.popover-body').text()).toBe('foobarbaz');
         // Consecutive toggles
         angular.element(elm[0]).triggerHandler('click');
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-content').text()).toBe('foobarbaz');
+        expect(sandboxEl.find('.popover-body').text()).toBe('foobarbaz');
       });
 
       it('should support template with ngClick', function() {
@@ -499,12 +499,12 @@ describe('popover', function() {
         );
         var elm = compileDirective('options-template');
         angular.element(elm[0]).triggerHandler('click');
-        expect(angular.element(sandboxEl.find('.popover-content > .btn')[0]).triggerHandler('click'));
+        expect(angular.element(sandboxEl.find('.popover-body > .btn')[0]).triggerHandler('click'));
         expect(scope.popover.counter).toBe(1);
         // Consecutive toggles
         angular.element(elm[0]).triggerHandler('click');
         angular.element(elm[0]).triggerHandler('click');
-        expect(angular.element(sandboxEl.find('.popover-content > .btn')[0]).triggerHandler('click'));
+        expect(angular.element(sandboxEl.find('.popover-body > .btn')[0]).triggerHandler('click'));
         expect(scope.popover.counter).toBe(2);
       });
     });
@@ -514,8 +514,8 @@ describe('popover', function() {
         $templateCache.put('custom', '{{foo}}: some content inside the template');
         var elm = compileDirective('options-contentTemplate');
         angular.element(elm[0]).triggerHandler('click');
-        expect(sandboxEl.find('.popover-title').text()).toBe('foo-title');
-        expect(sandboxEl.find('.popover-content').text()).toBe('bar: some content inside the template');
+        expect(sandboxEl.find('.popover-header').text()).toBe('foo-title');
+        expect(sandboxEl.find('.popover-body').text()).toBe('bar: some content inside the template');
       });
     });
 
@@ -572,8 +572,8 @@ describe('popover', function() {
         $timeout.flush();
         // sandboxEl.children().length === 2 indicates popover is in DOM/visible
         expect(sandboxEl.children().length).toBe(2);
-        angular.element(sandboxEl.find('.popover-content > .btn')[0]).triggerHandler('click');
-        angular.element(sandboxEl.find('.popover-content > .btn')[0]).triggerHandler('click');
+        angular.element(sandboxEl.find('.popover-body > .btn')[0]).triggerHandler('click');
+        angular.element(sandboxEl.find('.popover-body > .btn')[0]).triggerHandler('click');
         expect(scope.popover.counter).toBe(2);
         expect(sandboxEl.children().length).toBe(2);
         angular.element($window.document).triggerHandler('click');
@@ -591,9 +591,9 @@ describe('popover', function() {
         $timeout.flush();
         // sandboxEl.children().length === 2 indicates popover is in DOM/visible
         expect(sandboxEl.children().length).toBe(2);
-        angular.element(sandboxEl.find('.popover-content > .form-control')[0]).triggerHandler('click');
+        angular.element(sandboxEl.find('.popover-body > .form-control')[0]).triggerHandler('click');
         expect(sandboxEl.children().length).toBe(2);
-        angular.element(sandboxEl.find('.popover-content > .btn')[0]).triggerHandler('click');
+        angular.element(sandboxEl.find('.popover-body > .btn')[0]).triggerHandler('click');
         expect(sandboxEl.children().length).toBe(2);
         angular.element($window.document).triggerHandler('click');
         expect(sandboxEl.children().length).toBe(1);

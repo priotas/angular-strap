@@ -51,7 +51,9 @@ angular
       $$rAF,
       $timeout
     ) {
-      var isNative = /(ip[ao]d|iphone|android)/gi.test($window.navigator.userAgent);
+      var isNative = /(ip[ao]d|iphone|android)/gi.test(
+        $window.navigator.userAgent
+      );
       var isTouch = 'createTouch' in $window.document && isNative;
       var $body = angular.element($window.document);
 
@@ -59,14 +61,20 @@ angular
         var $tooltip = {};
 
         // Common vars
-        var options = ($tooltip.$options = angular.extend({}, defaults, config));
+        var options = ($tooltip.$options = angular.extend(
+          {},
+          defaults,
+          config
+        ));
         var promise = ($tooltip.$promise = $bsCompiler.compile(options));
-        var scope = ($tooltip.$scope = (options.scope && options.scope.$new()) || $rootScope.$new());
+        var scope = ($tooltip.$scope =
+          (options.scope && options.scope.$new()) || $rootScope.$new());
 
         var nodeName = element[0].nodeName.toLowerCase();
         if (options.delay && angular.isString(options.delay)) {
           var split = options.delay.split(',').map(parseFloat);
-          options.delay = split.length > 1 ? { show: split[0], hide: split[1] } : split[0];
+          options.delay =
+            split.length > 1 ? { show: split[0], hide: split[1] } : split[0];
         }
 
         // Store $id to identify the triggering element in events
@@ -145,7 +153,9 @@ angular
 
           // Options: target
           if (options.target) {
-            options.target = angular.isElement(options.target) ? options.target : findElement(options.target);
+            options.target = angular.isElement(options.target)
+              ? options.target
+              : findElement(options.target);
           }
 
           // Options: show
@@ -187,7 +197,10 @@ angular
           if (!options.bsEnabled || $tooltip.$isShown) return;
 
           scope.$emit(options.prefixEvent + '.show.before', $tooltip);
-          if (angular.isDefined(options.onBeforeShow) && angular.isFunction(options.onBeforeShow)) {
+          if (
+            angular.isDefined(options.onBeforeShow) &&
+            angular.isFunction(options.onBeforeShow)
+          ) {
             options.onBeforeShow($tooltip);
           }
           var parent;
@@ -208,16 +221,26 @@ angular
           if (tipElement) destroyTipElement();
           // Fetch a cloned element linked from template
           tipScope = $tooltip.$scope.$new();
-          tipElement = $tooltip.$element = compileData.link(tipScope, function(clonedElement, scope) {});
+          tipElement = $tooltip.$element = compileData.link(tipScope, function(
+            clonedElement,
+            scope
+          ) {});
 
           // Set the initial positioning.  Make the tooltip invisible
           // so IE doesn't try to focus on it off screen.
-          tipElement.css({ top: '-9999px', left: '-9999px', right: 'auto', display: 'block', visibility: 'hidden' });
+          tipElement.css({
+            top: '-9999px',
+            left: '-9999px',
+            right: 'auto',
+            display: 'block',
+            visibility: 'hidden'
+          });
 
           // Options: animation
           if (options.animation) tipElement.addClass(options.animation);
           // Options: type
-          if (options.type) tipElement.addClass(options.prefixClass + '-' + options.type);
+          if (options.type)
+            tipElement.addClass(options.prefixClass + '-' + options.type);
           // Options: custom classes
           if (options.customClass) tipElement.addClass(options.customClass);
 
@@ -236,14 +259,8 @@ angular
           // Now, apply placement
           $tooltip.$applyPlacement();
 
-          // Once placed, animate it.
-          // Support v1.2+ $animate
-          // https://github.com/angular/angular.js/issues/11713
-          if (angular.version.minor <= 2) {
-            $animate.enter(tipElement, parent, after, enterAnimateCallback);
-          } else {
-            $animate.enter(tipElement, parent, after).then(enterAnimateCallback);
-          }
+          $animate.enter(tipElement, parent, after).then(enterAnimateCallback);
+
           safeDigest(scope);
 
           $$rAF(function() {
@@ -266,7 +283,10 @@ angular
 
         function enterAnimateCallback() {
           scope.$emit(options.prefixEvent + '.show', $tooltip);
-          if (angular.isDefined(options.onShow) && angular.isFunction(options.onShow)) {
+          if (
+            angular.isDefined(options.onShow) &&
+            angular.isFunction(options.onShow)
+          ) {
             options.onShow($tooltip);
           }
         }
@@ -289,7 +309,10 @@ angular
         $tooltip.hide = function(blur) {
           if (!$tooltip.$isShown) return;
           scope.$emit(options.prefixEvent + '.hide.before', $tooltip);
-          if (angular.isDefined(options.onBeforeHide) && angular.isFunction(options.onBeforeHide)) {
+          if (
+            angular.isDefined(options.onBeforeHide) &&
+            angular.isFunction(options.onBeforeHide)
+          ) {
             options.onBeforeHide($tooltip);
           }
 
@@ -325,7 +348,10 @@ angular
 
         function leaveAnimateCallback() {
           scope.$emit(options.prefixEvent + '.hide', $tooltip);
-          if (angular.isDefined(options.onHide) && angular.isFunction(options.onHide)) {
+          if (
+            angular.isDefined(options.onHide) &&
+            angular.isFunction(options.onHide)
+          ) {
             options.onHide($tooltip);
           }
 
@@ -390,22 +416,36 @@ angular
           var tipHeight = tipElement.prop('offsetHeight');
 
           // Refresh viewport position
-          $tooltip.$viewport = options.viewport && findElement(options.viewport.selector || options.viewport);
+          $tooltip.$viewport =
+            options.viewport &&
+            findElement(options.viewport.selector || options.viewport);
 
           // If we're auto placing, we need to check the positioning
           if (autoPlace) {
             var originalPlacement = placement;
             var viewportPosition = getPosition($tooltip.$viewport);
 
-            if (/bottom/.test(originalPlacement) && elementPosition.bottom + tipHeight > viewportPosition.bottom) {
+            if (
+              /bottom/.test(originalPlacement) &&
+              elementPosition.bottom + tipHeight > viewportPosition.bottom
+            ) {
               placement = originalPlacement.replace('bottom', 'top');
-            } else if (/top/.test(originalPlacement) && elementPosition.top - tipHeight < viewportPosition.top) {
+            } else if (
+              /top/.test(originalPlacement) &&
+              elementPosition.top - tipHeight < viewportPosition.top
+            ) {
               placement = originalPlacement.replace('top', 'bottom');
             }
 
-            if (/left/.test(originalPlacement) && elementPosition.left - tipWidth < viewportPosition.left) {
+            if (
+              /left/.test(originalPlacement) &&
+              elementPosition.left - tipWidth < viewportPosition.left
+            ) {
               placement = placement.replace('left', 'right');
-            } else if (/right/.test(originalPlacement) && elementPosition.right + tipWidth > viewportPosition.width) {
+            } else if (
+              /right/.test(originalPlacement) &&
+              elementPosition.right + tipWidth > viewportPosition.width
+            ) {
               placement = placement.replace('right', 'left');
             }
 
@@ -413,7 +453,12 @@ angular
           }
 
           // Get the tooltip's top and left coordinates to center it with this directive.
-          var tipPosition = getCalculatedOffset(placement, elementPosition, tipWidth, tipHeight);
+          var tipPosition = getCalculatedOffset(
+            placement,
+            elementPosition,
+            tipWidth,
+            tipHeight
+          );
           applyPlacement(tipPosition, placement);
         };
 
@@ -453,10 +498,19 @@ angular
             if (trigger === 'click' || trigger === 'contextmenu') {
               element.on(trigger, $tooltip.toggle);
             } else if (trigger !== 'manual') {
-              element.on(trigger === 'hover' ? 'mouseenter' : 'focus', $tooltip.enter);
-              element.on(trigger === 'hover' ? 'mouseleave' : 'blur', $tooltip.leave);
+              element.on(
+                trigger === 'hover' ? 'mouseenter' : 'focus',
+                $tooltip.enter
+              );
+              element.on(
+                trigger === 'hover' ? 'mouseleave' : 'blur',
+                $tooltip.leave
+              );
               if (nodeName === 'button' && trigger !== 'hover') {
-                element.on(isTouch ? 'touchstart' : 'mousedown', $tooltip.$onFocusElementMouseDown);
+                element.on(
+                  isTouch ? 'touchstart' : 'mousedown',
+                  $tooltip.$onFocusElementMouseDown
+                );
               }
             }
           });
@@ -469,10 +523,19 @@ angular
             if (trigger === 'click' || trigger === 'contextmenu') {
               element.off(trigger, $tooltip.toggle);
             } else if (trigger !== 'manual') {
-              element.off(trigger === 'hover' ? 'mouseenter' : 'focus', $tooltip.enter);
-              element.off(trigger === 'hover' ? 'mouseleave' : 'blur', $tooltip.leave);
+              element.off(
+                trigger === 'hover' ? 'mouseenter' : 'focus',
+                $tooltip.enter
+              );
+              element.off(
+                trigger === 'hover' ? 'mouseleave' : 'blur',
+                $tooltip.leave
+              );
               if (nodeName === 'button' && trigger !== 'hover') {
-                element.off(isTouch ? 'touchstart' : 'mousedown', $tooltip.$onFocusElementMouseDown);
+                element.off(
+                  isTouch ? 'touchstart' : 'mousedown',
+                  $tooltip.$onFocusElementMouseDown
+                );
               }
             }
           }
@@ -550,7 +613,10 @@ angular
 
           if (rect.width === null) {
             // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
-            rect = angular.extend({}, rect, { width: elRect.right - elRect.left, height: elRect.bottom - elRect.top });
+            rect = angular.extend({}, rect, {
+              width: elRect.right - elRect.left,
+              height: elRect.bottom - elRect.top
+            });
           }
           var elOffset = isBody ? { top: 0, left: 0 } : dimensions.offset(el);
           var scroll = {
@@ -558,12 +624,22 @@ angular
               ? document.documentElement.scrollTop || document.body.scrollTop
               : $element.prop('scrollTop') || 0
           };
-          var outerDims = isBody ? { width: document.documentElement.clientWidth, height: $window.innerHeight } : null;
+          var outerDims = isBody
+            ? {
+                width: document.documentElement.clientWidth,
+                height: $window.innerHeight
+              }
+            : null;
 
           return angular.extend({}, rect, scroll, outerDims, elOffset);
         }
 
-        function getCalculatedOffset(placement, position, actualWidth, actualHeight) {
+        function getCalculatedOffset(
+          placement,
+          position,
+          actualWidth,
+          actualHeight
+        ) {
           var offset;
           var split = placement.split('-');
 
@@ -671,9 +747,15 @@ angular
 
           // If it's an exotic placement, exit now instead of
           // applying a delta and changing the arrow
-          if (/top-left|top-right|bottom-left|bottom-right/.test(placement)) return;
+          if (/top-left|top-right|bottom-left|bottom-right/.test(placement))
+            return;
 
-          var delta = getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight);
+          var delta = getViewportAdjustedDelta(
+            placement,
+            offset,
+            actualWidth,
+            actualHeight
+          );
 
           if (delta.left) {
             offset.left += delta.left;
@@ -685,30 +767,51 @@ angular
 
           if (/top|right|bottom|left/.test(placement)) {
             var isVertical = /top|bottom/.test(placement);
-            var arrowDelta = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight;
-            var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight';
+            var arrowDelta = isVertical
+              ? delta.left * 2 - width + actualWidth
+              : delta.top * 2 - height + actualHeight;
+            var arrowOffsetPosition = isVertical
+              ? 'offsetWidth'
+              : 'offsetHeight';
 
             replaceArrow(arrowDelta, tip[arrowOffsetPosition], isVertical);
           }
         }
 
         // @source https://github.com/twbs/bootstrap/blob/v3.3.5/js/tooltip.js#L380
-        function getViewportAdjustedDelta(placement, position, actualWidth, actualHeight) {
+        function getViewportAdjustedDelta(
+          placement,
+          position,
+          actualWidth,
+          actualHeight
+        ) {
           var delta = { top: 0, left: 0 };
           if (!$tooltip.$viewport) return delta;
 
-          var viewportPadding = (options.viewport && options.viewport.padding) || 0;
+          var viewportPadding =
+            (options.viewport && options.viewport.padding) || 0;
           var viewportDimensions = getPosition($tooltip.$viewport);
 
           if (/right|left/.test(placement)) {
-            var topEdgeOffset = position.top - viewportPadding - viewportDimensions.scroll;
-            var bottomEdgeOffset = position.top + viewportPadding - viewportDimensions.scroll + actualHeight;
+            var topEdgeOffset =
+              position.top - viewportPadding - viewportDimensions.scroll;
+            var bottomEdgeOffset =
+              position.top +
+              viewportPadding -
+              viewportDimensions.scroll +
+              actualHeight;
             if (topEdgeOffset < viewportDimensions.top) {
               // top overflow
               delta.top = viewportDimensions.top - topEdgeOffset;
-            } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) {
+            } else if (
+              bottomEdgeOffset >
+              viewportDimensions.top + viewportDimensions.height
+            ) {
               // bottom overflow
-              delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset;
+              delta.top =
+                viewportDimensions.top +
+                viewportDimensions.height -
+                bottomEdgeOffset;
             }
           } else {
             var leftEdgeOffset = position.left - viewportPadding;
@@ -718,7 +821,10 @@ angular
               delta.left = viewportDimensions.left - leftEdgeOffset;
             } else if (rightEdgeOffset > viewportDimensions.right) {
               // right overflow
-              delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset;
+              delta.left =
+                viewportDimensions.left +
+                viewportDimensions.width -
+                rightEdgeOffset;
             }
           }
 
@@ -729,7 +835,10 @@ angular
           var $arrow = findElement('.tooltip-arrow, .arrow', tipElement[0]);
 
           $arrow
-            .css(isHorizontal ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
+            .css(
+              isHorizontal ? 'left' : 'top',
+              50 * (1 - delta / dimension) + '%'
+            )
             .css(isHorizontal ? 'top' : 'left', '');
         }
 
@@ -765,7 +874,9 @@ angular
 
       function safeDigest(scope) {
         /* eslint-disable no-unused-expressions */
-        scope.$$phase || (scope.$root && scope.$root.$$phase) || scope.$digest();
+        scope.$$phase ||
+          (scope.$root && scope.$root.$$phase) ||
+          scope.$digest();
         /* eslint-enable no-unused-expressions */
       }
 
@@ -777,7 +888,14 @@ angular
     };
   })
 
-  .directive('bsTooltip', function($window, $location, $sce, $parse, $tooltip, $$rAF) {
+  .directive('bsTooltip', function(
+    $window,
+    $location,
+    $sce,
+    $parse,
+    $tooltip,
+    $$rAF
+  ) {
     return {
       restrict: 'EAC',
       scope: true,
@@ -811,18 +929,24 @@ angular
         // use string regex match boolean attr falsy values, leave truthy values be
         var falseValueRegExp = /^(false|0|)$/i;
         angular.forEach(['html', 'container'], function(key) {
-          if (angular.isDefined(attr[key]) && falseValueRegExp.test(attr[key])) {
+          if (
+            angular.isDefined(attr[key]) &&
+            falseValueRegExp.test(attr[key])
+          ) {
             options[key] = false;
           }
         });
 
         // bind functions from the attrs to the show and hide events
-        angular.forEach(['onBeforeShow', 'onShow', 'onBeforeHide', 'onHide'], function(key) {
-          var bsKey = 'bs' + key.charAt(0).toUpperCase() + key.slice(1);
-          if (angular.isDefined(attr[bsKey])) {
-            options[key] = scope.$eval(attr[bsKey]);
+        angular.forEach(
+          ['onBeforeShow', 'onShow', 'onBeforeHide', 'onHide'],
+          function(key) {
+            var bsKey = 'bs' + key.charAt(0).toUpperCase() + key.slice(1);
+            if (angular.isDefined(attr[bsKey])) {
+              options[key] = scope.$eval(attr[bsKey]);
+            }
           }
-        });
+        );
 
         // should not parse target attribute (anchor tag), only data-target #1454
         var dataTarget = element.attr('data-target');
@@ -883,7 +1007,8 @@ angular
         if (attr.bsShow) {
           scope.$watch(attr.bsShow, function(newValue, oldValue) {
             if (!tooltip || !angular.isDefined(newValue)) return;
-            if (angular.isString(newValue)) newValue = !!newValue.match(/true|,?(tooltip),?/i);
+            if (angular.isString(newValue))
+              newValue = !!newValue.match(/true|,?(tooltip),?/i);
             if (newValue === true) {
               tooltip.show();
             } else {
@@ -897,7 +1022,8 @@ angular
           scope.$watch(attr.bsEnabled, function(newValue, oldValue) {
             // console.warn('scope.$watch(%s)', attr.bsEnabled, newValue, oldValue);
             if (!tooltip || !angular.isDefined(newValue)) return;
-            if (angular.isString(newValue)) newValue = !!newValue.match(/true|1|,?(tooltip),?/i);
+            if (angular.isString(newValue))
+              newValue = !!newValue.match(/true|1|,?(tooltip),?/i);
             if (newValue === false) {
               tooltip.setEnabled(false);
             } else {
