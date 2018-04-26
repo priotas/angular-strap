@@ -1,7 +1,7 @@
 {
   "name": "@priotas/angular-strap",
   "description": "AngularStrap - AngularJS directives for Bootstrap",
-  "version": "10.3.15",
+  "version": "10.3.16",
   "keywords": [
     "angular",
     "bootstrap"
