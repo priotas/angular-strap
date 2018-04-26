@@ -299,7 +299,13 @@ _angular2.default.module(_tooltip2.default, [_core2.default, _dimensions2.defaul
 
         // Set the initial positioning.  Make the tooltip invisible
         // so IE doesn't try to focus on it off screen.
-        tipElement.css({ top: '-9999px', left: '-9999px', right: 'auto', display: 'block', visibility: 'hidden' });
+        tipElement.css({
+          top: '-9999px',
+          left: '-9999px',
+          right: 'auto',
+          display: 'block',
+          visibility: 'hidden'
+        });
 
         // Options: animation
         if (options.animation) tipElement.addClass(options.animation);
@@ -323,14 +329,8 @@ _angular2.default.module(_tooltip2.default, [_core2.default, _dimensions2.defaul
         // Now, apply placement
         $tooltip.$applyPlacement();
 
-        // Once placed, animate it.
-        // Support v1.2+ $animate
-        // https://github.com/angular/angular.js/issues/11713
-        if (_angular2.default.version.minor <= 2) {
-          $animate.enter(tipElement, parent, after, enterAnimateCallback);
-        } else {
-          $animate.enter(tipElement, parent, after).then(enterAnimateCallback);
-        }
+        $animate.enter(tipElement, parent, after).then(enterAnimateCallback);
+
         safeDigest(scope);
 
         $$rAF(function () {
@@ -633,13 +633,19 @@ _angular2.default.module(_tooltip2.default, [_core2.default, _dimensions2.defaul
 
         if (rect.width === null) {
           // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
-          rect = _angular2.default.extend({}, rect, { width: elRect.right - elRect.left, height: elRect.bottom - elRect.top });
+          rect = _angular2.default.extend({}, rect, {
+            width: elRect.right - elRect.left,
+            height: elRect.bottom - elRect.top
+          });
         }
         var elOffset = isBody ? { top: 0, left: 0 } : dimensions.offset(el);
         var scroll = {
           scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.prop('scrollTop') || 0
         };
-        var outerDims = isBody ? { width: document.documentElement.clientWidth, height: $window.innerHeight } : null;
+        var outerDims = isBody ? {
+          width: document.documentElement.clientWidth,
+          height: $window.innerHeight
+        } : null;
 
         return _angular2.default.extend({}, rect, scroll, outerDims, elOffset);
       }

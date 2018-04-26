@@ -705,7 +705,7 @@ _angular2.default.module(_tooltip2.default).run(['$templateCache', function ($te
 /* 64 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tooltip in\" ng-show=title> <div class=tooltip-arrow></div> <div class=tooltip-inner ng-bind=title></div> </div> ";
+module.exports = "<div class=\"tooltip show\" ng-show=title> <div class=arrow></div> <div class=tooltip-inner ng-bind=title></div> </div>";
 
 /***/ }),
 /* 65 */
