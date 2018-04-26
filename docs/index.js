@@ -1,5 +1,6 @@
 import angular from 'angular';
 import angularAnimate from 'angular-animate';
+import angularSanitize from 'angular-sanitize';
 
 // 3rd Party
 import uiRouter from '@uirouter/angularjs';
@@ -39,6 +40,7 @@ angular
     'hljs',
     uiRouter,
     angularAnimate,
+    angularSanitize,
     alertDoc,
     asideDoc,
     buttonDoc,
