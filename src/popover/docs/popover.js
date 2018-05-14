@@ -18,7 +18,7 @@ angular
   ])
   .config(function($popoverProvider) {
     angular.extend($popoverProvider.defaults, {
-      html: true
+      html: false
     });
   });
 
