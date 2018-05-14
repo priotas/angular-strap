@@ -23,6 +23,7 @@ import modalDoc from 'modal/docs/modal';
 import popoverDoc from 'popover/docs/popover';
 import selectDoc from 'select/docs/select';
 import timepickerDoc from 'timepicker/docs/timepicker';
+import tooltipDoc from 'tooltip/docs/tooltip';
 
 import routes from './routes';
 
