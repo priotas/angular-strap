@@ -36,7 +36,8 @@ const config = env => {
               options: {
                 minimize: true,
                 removeComments: true,
-                collapseWhitespace: true
+                collapseWhitespace: true,
+                removeAttributeQuotes: false
               }
             }
           ]
