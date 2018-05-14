@@ -1000,7 +1000,7 @@ exports.default = MODULE_NAME;
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=modal tabindex=-1 role=dialog aria-hidden=true> <div class=modal-dialog> <div class=modal-content> <div class=modal-header ng-show=title> <h5 class=modal-title ng-bind=title></h5> <button type=button role=button class=close aria-label=Close ng-click=$hide()><span aria-hidden=true>&times;</span></button> </div> <div class=modal-body ng-bind=content></div> <div class=modal-footer> <button type=button class=\"btn btn-default\" ng-click=$hide() aria-label=Close>Close</button> </div> </div> </div> </div> ";
+module.exports = "<div class=\"modal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\"> <div class=\"modal-dialog\"> <div class=\"modal-content\"> <div class=\"modal-header\" ng-show=\"title\"> <h5 class=\"modal-title\" ng-bind=\"title\"></h5> <button type=\"button\" role=\"button\" class=\"close\" aria-label=\"Close\" ng-click=\"$hide()\"><span aria-hidden=\"true\">&times;</span></button> </div> <div class=\"modal-body\" ng-bind=\"content\"></div> <div class=\"modal-footer\"> <button type=\"button\" class=\"btn btn-default\" ng-click=\"$hide()\" aria-label=\"Close\">Close</button> </div> </div> </div> </div> ";
 
 /***/ }),
 /* 4 */
